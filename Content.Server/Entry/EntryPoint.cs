@@ -10,7 +10,7 @@ using Content.Server.Corvax.GuideGenerator;
 using Content.Server.Corvax.DiscordAuth;
 using Content.Server.Corvax.JoinQueue;
 using Content.Server.Corvax.Sponsors;
-using Content.Server.Corvax.TTS;
+using Content.Server.ADT.TTS;
 using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.EUI;
@@ -43,6 +43,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.ADT.Antag;
 using Content.Server.ADT.Export;
+using Content.Server.ADT.JoinQueue;
 using Content.Shared.Emp;
 
 namespace Content.Server.Entry
@@ -146,9 +147,11 @@ namespace Content.Server.Entry
             _job.Initialize();
             _rateLimit.Initialize();
             IoCManager.Resolve<ExportManager>().Initialize(); // ADT-tweak: export
-            IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
+            IoCManager.Resolve<TTSManager>().Initialize(); // ADT-Tweak
             IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
+            IoCManager.Resolve<Content.Server.ADT.Sponsors.SponsorManager>().Initialize(); // ADT-Tweak
             IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Queue
+            IoCManager.Resolve<QueueGamesManager>().Initialize(); // ADT-Tweak: queue games
             IoCManager.Resolve<AntagRollBonusManager>().Initialize(); // ADT Antag roll bonus
         }
 
@@ -231,6 +234,7 @@ namespace Content.Server.Entry
             }
 
             _serverApi.Shutdown();
+            IoCManager.Resolve<Content.Server.ADT.Sponsors.SponsorManager>().Shutdown(); // ADT-Tweak
 
             // We don't care when or how this finishes, just spin the task off into the void.
             _ = _discordLink.Shutdown();

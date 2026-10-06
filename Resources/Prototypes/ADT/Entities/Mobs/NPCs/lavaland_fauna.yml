@@ -153,6 +153,9 @@
   parent: ADTSimpleMobBaselavaland
   description: A worm that grows fat from eating everything in its sight. Seems to enjoy precious metals and other shiny things, hence the name.
   components:
+  - type: Tag
+    tags:
+    - ADTGoldgrub
   - type: Sprite
     drawdepth: Mobs
     sprite: ADT/Mobs/Lavaland/goldgrub.rsi
@@ -187,6 +190,10 @@
   - type: ADTBurrowAway
     triggerRange: 6
     chaseTime: 10
+  - type: ADTFlee
+    targetKey: FleeTarget
+    distance: 8
+    defaultRange: 6
   - type: HTN
     rootTask:
       task: ADTGoldgrubCompound
@@ -201,7 +208,7 @@
   - type: ADTBulletDeflect
   - type: Butcherable
     spawned:
-    - id: FoodMeat
+    - id: ADTFoodMeatGoldgrub
       amount: 1
   - type: ADTScavenger
     storeEaten: true
@@ -215,5 +222,6 @@
       SilverOre1: 0.5
       UraniumOre1: 0.4
       DiamondOre1: 0.25
+      ADTGemRuperium: 0.4
   - type: MobPrice
     price: 300

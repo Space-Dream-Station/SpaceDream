@@ -57,17 +57,17 @@ public sealed partial class SlimeGrinderSystem : EntitySystem
         var query = EntityQueryEnumerator<ActiveSlimeGrinderComponent, SlimeGrinderComponent>();
         while (query.MoveNext(out var uid, out _, out var grinder))
         {
-            grinder.ProcessingTimer = Math.Clamp(grinder.ProcessingTimer - frameTime, 0, grinder.ProcessingTimer);
+            grinder.ProcessingTimer = Math.Max(0f, grinder.ProcessingTimer - frameTime);
 
             if (grinder.ProcessingTimer > 0)
-                return;
+                continue;
 
-            foreach (var yield in grinder.YieldQueue)
+            foreach (var (protoId, count) in grinder.YieldQueue)
             {
-                for (int i = 0; i < yield.Value; i++)
-                    SpawnNextToOrDrop(yield.Key, uid);
-                grinder.YieldQueue.Remove(yield.Key);
+                for (var i = 0; i < count; i++)
+                    SpawnNextToOrDrop(protoId, uid);
             }
+            grinder.YieldQueue.Clear();
 
             if (HasComp<ActiveSlimeGrinderComponent>(uid))
                 RemCompDeferred<ActiveSlimeGrinderComponent>(uid);
@@ -170,7 +170,7 @@ public sealed partial class SlimeGrinderSystem : EntitySystem
         grinder.Comp.ProcessingTimer += physics.FixturesMass * grinder.Comp.ProcessingTimePerUnitMass;
 
         var extractProto = _xenobio.GetProducedExtract((toProcess, slime));
-        var extractQuantity = slime.ExtractsProduced;
+        var extractQuantity = (int)MathF.Round(slime.ExtractsProduced + slime.SlimeSteroidAmount);
 
         if (!grinder.Comp.YieldQueue.ContainsKey(extractProto))
             grinder.Comp.YieldQueue.Add(extractProto, extractQuantity);
