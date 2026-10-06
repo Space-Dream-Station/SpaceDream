@@ -309,16 +309,6 @@
   # ADT-Tweak end
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]
-  # SD edit start
-  - type: UserInterface
-    interfaces:
-      enum.SuitStorageUiKey.Key:
-        type: SuitStorageBoundUserInterface
-  - type: SuitStorage
-    options:
-    - ADTClothingModsuitBackMinerva
-    - ClothingOuterHardsuitRd
-  # SD edit end
 
 #HOS's hardsuit
 - type: entity
