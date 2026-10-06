@@ -1,0 +1,35 @@
+- type: reagent
+  id: Xenonutriment
+  name: reagent-name-xenonutriment
+  group: Foods
+  desc: reagent-desc-xenonutriment
+  physicalDesc: reagent-physical-desc-opaque
+  color: "#5A3E7D"
+  metabolisms:
+    Metabolites:
+      effects:
+      - !type:SatiateHunger
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -0.3
+            Shock: -0.3
+            Cold: -0.3
+            Piercing: -0.4
+      - !type:ModifyBleed
+        amount: -0.3
+      - !type:ModifyBloodLevel
+        amount: 0.5
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Human ]
+        damage:
+          types:
+            Poison: 1
+  plantMetabolism:
+  - !type:PlantAdjustNutrition
+    amount: 2
+  - !type:PlantAdjustHealth
+    amount: 1
+  pricePerUnit: 3

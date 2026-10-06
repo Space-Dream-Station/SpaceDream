@@ -63,14 +63,17 @@
   parent: BasePowerCellRecipe
   id: PowerCellMicroreactor
   result: PowerCellMicroreactorPrinted
-  completetime: 10
+  completetime: 20  #SD Tweak
   materials:
-    Steel: 500
-    Glass: 400
-    Uranium: 200
-    Gold: 100
-    Silver: 100 #ADT-BFUU-Tweak-start
-    Zinc: 300 #ADT-BFUU-Tweak-end
+# SD Tweak Start
+    Steel: 1500
+    PlasmaGlass: 500
+    Copper: 1000
+    Gold: 500
+    Zinc: 1000
+    Silver: 1000
+    Uranium: 1500
+# SD Tweak End
 
 # Power cages
 - type: latheRecipe

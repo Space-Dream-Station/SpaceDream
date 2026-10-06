@@ -1,0 +1,15 @@
+- type: vendingMachineInventory
+  id: SpeciesSnackInventory
+  startingInventory:
+    FoodSnackVulpChocolate: 5
+    FoodSnackBird: 5
+    FoodSnackDryBugs: 4
+    FoodSnackPlasmaCandy: 4
+    FoodSnackSilkCrunchSweet: 3
+    FoodSnackSilkCrunchSalty: 3
+    FoodSnackFrogOnStick: 2
+    FoodSnackMouseOnStick: 2
+    FoodSnackCockroachOnStick: 2
+  emaggedInventory:
+    ResomiXenophobeBox: 2
+    FoodSnackSobakaChocolate: 5

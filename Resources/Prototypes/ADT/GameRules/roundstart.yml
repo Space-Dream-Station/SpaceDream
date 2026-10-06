@@ -341,7 +341,7 @@
   components:
   - type: BlobRule
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 35  # SD Tweak
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:

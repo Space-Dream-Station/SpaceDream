@@ -21,3 +21,29 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSpeciesSnack
+  name: Speciessnackmat
+  description: Everything for everyone.
+  components:
+  - type: VendingMachine
+    pack: SpeciesSnackInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+    loopDeny: false
+  - type: Sprite
+    sprite: _SD/Structures/Machines/VendingMachines/speciessnack.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+

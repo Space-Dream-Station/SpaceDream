@@ -1,0 +1,57 @@
+- type: entity
+  id: ResomiXenophobeBox
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  name: resomi xenophobe meal
+  suffix: Toy Safe
+  description: The toy is more edible than the food.
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Storage/resomixen.rsi
+    state: box
+    layers:
+    - state: box
+      map: ["closeLayer"]
+    - state: box-open
+      map: ["openLayer"]
+  - type: Item
+    sprite: _SD/Objects/Storage/resomixen.rsi
+    heldPrefix: box
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,3
+  - type: Tag
+    tags:
+    - Trash
+    - BoxCardboard
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: ResomiXenophobeBoxEntityTable
+
+- type: entityTable
+  id: ResomiXenophobeBoxEntityTable
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: PlushieResomiBlue
+      - id: PlushieResomiGreen
+      - id: PlushieResomiRed
+      - id: PlushieResomiPurple
+      - id: PlushieResomiYellow
+
+    - !type:GroupSelector
+      children:
+      - id: FoodBakedVulpkaninPlate
+      - id: FoodBurgerCat
+      - id: ADTFoodMeatShadekinCutletCooked
+      - id: FoodBurgerXeno
+      - id: FoodCakeSlimeSlice
+      - id: FoodBurgerHuman
+      - id: FoodMeatLizardCutletCooked
+      - id: FoodMeatXenoCutletCooked
+      - id: FoodMeatSpiderCutletCooked
+      - id: FoodMeatHumanKebab
+      - id: FoodMeatLizardtailKebab
+      - id: FoodSnackMothDough

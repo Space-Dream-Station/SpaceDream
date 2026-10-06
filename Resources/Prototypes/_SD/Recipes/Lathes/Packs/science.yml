@@ -2,3 +2,10 @@
   id: SDPointsMinerPack
   recipes:
   - SDPointsMinerFlatpack
+
+- type: latheRecipePack
+  id: SDSpecGlassesTech
+  recipes:
+    - ClothingEyesNightVisionRecipe
+    - ClothingEyesGlassesThermalRecipe
+

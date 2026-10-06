@@ -1,0 +1,611 @@
+- type: entity
+  parent: BaseItem
+  id: FoodSnackVulpChocolate
+  name: chocolate woofbar
+  description: Tastes like cardboard.
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: chocolatebar-vulp
+  - type: Item
+    heldPrefix: chocolatebar-vulp
+    size: Tiny
+    storedOffset: 1,-1
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketVulpChocolateTrash
+      - id: FoodSnackVulpChocolateBar
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackVulpChocolateBar
+  name: chocolate woofbar
+  description: Tastes like cardboard.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: chocolatebar-vulp-open
+  - type: Item
+    heldPrefix: chocolatebar-vulp-open
+    storedOffset: 1,-2
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 11
+        - ReagentId: CocoaPowder
+          Quantity: 3
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketVulpChocolateTrash
+  name: vulpkanins chocolate wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: chocolatebar-vulptrash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#5B6EE1"
+      right:
+      - state: trash-inhand-right
+        color: "#5B6EE1"
+
+- type: entity
+  parent: BaseItem
+  id: FoodSnackSobakaChocolate
+  name: big chocolate woofbar
+  description: Tastes like cardboard.
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: choco-dog
+  - type: Item
+    heldPrefix: chocolatebar-vulp
+    storedOffset: 1,-1
+    shape:
+      - 0,0,1,1
+    size: Normal
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketSobakaChocolateTrash
+      - id: FoodSnackSobakaChocolateBar
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackSobakaChocolateBar
+  name: big chocolate woofbar
+  description: Tastes like cardboard.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: choco-dog-open
+  - type: Item
+    shape:
+      - 0,0,1,1
+    heldPrefix: chocolatebar-vulp-open
+    storedOffset: 1,-2
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Theobromine
+          Quantity: 6
+        - ReagentId: CocoaPowder
+          Quantity: 3
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSobakaChocolateTrash
+  name: chocolate wrapper from big dog
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: choco-dog-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#5B6EE1"
+      right:
+      - state: trash-inhand-right
+        color: "#5B6EE1"
+
+- type: entity
+  parent: BaseItem
+  id: FoodSnackBird
+  name: beaky sticks
+  description: Tastes like nut brittle.
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: resomistick-packed
+  - type: Item
+    size: Tiny
+    storedOffset: 1,-1
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketBirdTrash
+      - id: FoodSnackBirdStick
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackBirdStick
+  name: beaky sticks
+  description: Tastes like nut brittle.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: resomistick
+  - type: Item
+    storedOffset: 1,-2
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 14
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketBirdTrash
+  name: beaky sticks wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: resomistick-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#89DCFF"
+      right:
+      - state: trash-inhand-right
+        color: "#89DCFF"
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackDryBugs
+  name: chips drybugs
+  description: Tastes like bugs.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - meaty
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: drybugs
+  - type: Edible
+    trash:
+    - FoodPacketDryBugs
+  - type: Item
+    storedOffset: 1,-2
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketDryBugs
+  name: chips drybugs wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: drybugs-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#FF2F2F"
+      right:
+      - state: trash-inhand-right
+        color: "#FF2F2F"
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackSilkCrunchSweet
+  name: silk crunch sweet
+  description: Tastes like fiber.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cotton
+      - sweet
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: sugar-silkcrunch
+  - type: Edible
+    requiresSpecialDigestion: true
+    trash:
+    - FoodPacketSilkCrunchSweet
+  - type: Item
+    storedOffset: 1,-2
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+      - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSilkCrunchSweet
+  name: silk crunch sweet wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: sugar-silkcrunch-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#F5EBE6"
+      right:
+      - state: trash-inhand-right
+        color: "#F5EBE6"
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackSilkCrunchSalty
+  name: silk crunch salty
+  description: Tastes like fiber.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cotton
+      - salty
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: salty-silkcrunch
+  - type: Edible
+    requiresSpecialDigestion: true
+    trash:
+    - FoodPacketSilkCrunchSalty
+  - type: Item
+    storedOffset: 1,-2
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+      - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSilkCrunchSalty
+  name: silk crunch salty wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: salty-silkcrunch-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#554E9B"
+      right:
+      - state: trash-inhand-right
+        color: "#554E9B"
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackFrogOnStick
+  name: frog on stick
+  description: Tastes like... Frog.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - slimy
+      - fishy
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: frog-on-stick
+  - type: Edible
+    trash:
+    - FoodPacketFrogOnStick
+  - type: Item
+    storedOffset: 1,-2
+    shape:
+      - 0,0,0,1
+    size: Small
+    storedRotation: -90
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 15
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketFrogOnStick
+  name: stick from frog
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: frog-on-stick-trash
+  - type: Item
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackPlasmaCandy
+  name: candyplasm
+  description: Tastes like true plasma.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - savory
+      - bitter
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: candy
+  - type: Edible
+    trash:
+    - FoodPacketPlasmaCandy
+  - type: Item
+    storedOffset: 1,-2
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+    shape:
+      - 0,0,0,1
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketPlasmaCandy
+  name: candyplasm wrapper
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: candy-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#6E3181"
+      right:
+      - state: trash-inhand-right
+        color: "#6E3181"
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackMouseOnStick
+  name: mouse on stick
+  description: Tastes like... Mouse.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sadness
+      - meaty
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: mouse-on-stick
+  - type: Edible
+    trash:
+    - FoodPacketMouseOnStick
+  - type: Item
+    storedOffset: 1,-2
+    shape:
+      - 0,0,0,1
+    size: Small
+    storedRotation: -90
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketMouseOnStick
+  name: stick from mouse
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: mouse-on-stick-trash
+  - type: Item
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackMothDough
+  name: moth in the dough
+  description: Tastes like moth.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - funny
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: moth-on-stick
+  - type: Edible
+  - type: Item
+    storedOffset: 1,-2
+    shape:
+      - 0,0,0,1
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackCockroachOnStick
+  name: cockroach on stick
+  description: Tastes like... Cockroach.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sadness
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: cockroach-on-stick
+  - type: Edible
+    trash:
+    - FoodPacketCockroachOnStick
+  - type: Item
+    storedOffset: 1,-2
+    shape:
+      - 0,0,0,1
+    size: Small
+    storedRotation: -90
+    inhandVisuals:
+      Left:
+      - state: ""
+      Right:
+      - state: ""
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Xenonutriment
+          Quantity: 5
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketCockroachOnStick
+  name: stick from cockroach
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Consumable/Food/snacks.rsi
+    state: cockroach-on-stick-trash
+  - type: Item

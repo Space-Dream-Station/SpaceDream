@@ -45,6 +45,11 @@
       - AdvancedPrying # ADT-Axe-Great-Return
   - type: ToolTileCompatible
   - type: Prying
+    # SD Tweak Start
+    speedModifier: 1.5
+    pryPowered: true
+    useSound: /Audio/Items/crowbar.ogg
+    # SD Tweak End
   - type: UseDelay
     delay: 1
   - type: StealTarget
