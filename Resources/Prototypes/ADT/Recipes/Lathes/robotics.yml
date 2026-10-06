@@ -481,17 +481,19 @@
 #     Gold: 100
 #     Plasma: 50
 
-- type: latheRecipe
-  id: ADTClothingOuterExoskeletonBase
-  result: ADTClothingOuterExoskeletonBase
-  completetime: 2
-  materials:
-    Steel: 2000
-    Plastic: 250
-    Gold: 100
-    Plasma: 50
-    Silver: 400
-    Copper: 500
+# SD Edit Start
+#- type: latheRecipe
+#  id: ADTClothingOuterExoskeletonBase
+#  result: ADTClothingOuterExoskeletonBase
+#  completetime: 2
+#  materials:
+#    Steel: 2000
+#    Plastic: 250
+#    Gold: 100
+#    Plasma: 50
+#   Silver: 400
+#   Copper: 500
+# SD Edit End
 
 - type: latheRecipe
   id: ADTModsuitModEmpProtection

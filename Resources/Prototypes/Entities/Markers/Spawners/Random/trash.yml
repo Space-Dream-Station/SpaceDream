@@ -37,6 +37,18 @@
       - id: ADTFoodPacketChocolateTrashPink
       - id: ADTFoodPacketChocolateTrashTwo
 #ADT-Tweak-End
+# SD Tweak Start
+      - id: FoodPacketVulpChocolateTrash
+      - id: FoodPacketDryBugs
+      - id: FoodPacketBirdTrash
+      - id: FoodPacketSilkCrunchSweet
+      - id: FoodPacketSilkCrunchSalty
+      - id: FoodPacketFrogOnStick
+      - id: FoodPacketPlasmaCandy
+      - id: FoodPacketMouseOnStick
+      - id: FoodPacketSobakaChocolateTrash
+      - id: FoodPacketCockroachOnStick
+# SD Tweak End
     - !type:GroupSelector
       weight: 5
       children:

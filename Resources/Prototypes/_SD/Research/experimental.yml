@@ -1,0 +1,15 @@
+- type: technology
+  id: SDSpecGlassesTech
+  name: research-technology-spec-glasses-tech
+  icon:
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 12000
+  recipeUnlocks:
+  - ClothingEyesNightVisionRecipe
+  - ClothingEyesGlassesThermalRecipe
+  position: 1,2
+  requiredTech:
+  - MagnetsTech

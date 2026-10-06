@@ -142,6 +142,12 @@
     sprintModifier: 1.5
     standing: true
   - type: Appearance
+  # SD Tweak Start
+  - type: ItemTogglePrefix
+    prefixOn: on
+  - type: ToggleClothingPrefix
+    prefixOn: on
+  # SD Tweak End
   - type: GenericVisualizer
     visuals:
       enum.ToggleableVisuals.Enabled:
@@ -159,6 +165,7 @@
         name: power-cell-slot-component-slot-name-default
   - type: Tag
     tags: []
+
 
 - type: entity
   parent: BaseAction

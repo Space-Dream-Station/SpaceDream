@@ -1,0 +1,20 @@
+- type: latheRecipe
+  id: ClothingEyesNightVisionRecipe
+  result: ClothingEyesNightVision
+  completetime: 10
+  materials:
+    Steel: 1500
+    Glass: 1000
+    Copper: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: ClothingEyesGlassesThermalRecipe
+  result: ClothingEyesGlassesThermal
+  completetime: 10
+  materials:
+    Steel: 1500
+    Glass: 1000
+    Copper: 500
+    Gold: 500
+

@@ -18,20 +18,22 @@
   requiredTech:
   - AdvancedEntertainment
 
-- type: technology
-  id: ADTExoskeletons
-  name: research-technology-exoskeletons
-  icon:
-    sprite: ADT/Clothing/OuterClothing/Exoskeletons/rnd_exoskeleton.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
-  - ADTClothingOuterExoskeletonBase
-  position: 2,3
-  requiredTech:
-  - BluespaceCargoTransport
+# SD Tweak Start
+#- type: technology
+#  id: ADTExoskeletons
+#  name: research-technology-exoskeletons
+#  icon:
+#    sprite: ADT/Clothing/OuterClothing/Exoskeletons/rnd_exoskeleton.rsi
+#    state: icon
+#  discipline: CivilianServices
+#  tier: 3
+#  cost: 10000
+#  recipeUnlocks:
+#  - ADTClothingOuterExoskeletonBase
+#  position: 2,3
+#  requiredTech:
+#  - BluespaceCargoTransport
+# SD Tweak End
 
 - type: technology
   id: ADTServicePlus

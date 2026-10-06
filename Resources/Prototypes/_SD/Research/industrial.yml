@@ -1,0 +1,14 @@
+- type: technology
+  id: SDPowerCellMicroreactor
+  name: research-technology-power-cell-microreactor
+  icon:
+    sprite: Objects/Power/power_cells.rsi
+    state: microreactor
+  discipline: Industrial
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+    - PowerCellMicroreactor
+  position: -1, -2
+  requiredTech:
+  - ADTAdvancedEnergy

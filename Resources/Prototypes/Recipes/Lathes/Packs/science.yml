@@ -31,8 +31,8 @@
   recipes:
   - ClothingShoesBootsMagSci
   # - ClothingShoesBootsMoon # ADT-Tweak - убираем луноходы
-  # - ClothingShoesBootsSpeed # ADT tweak
-  - ADTClothingOuterExoskeletonBase #ADT tweak
+  - ClothingShoesBootsSpeed #SD tweak
+  # - ADTClothingOuterExoskeletonBase #SD tweak
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding

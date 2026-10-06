@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "sprited by thedusteffin (discord) for space dream.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "chocolatebar-vulp"
+    },
+    {
+      "name": "chocolatebar-vulp-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "chocolatebar-vulp-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "trash-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "trash-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "chocolatebar-vulp-open"
+    },
+    {
+      "name": "chocolatebar-vulp-open-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "chocolatebar-vulp-open-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "chocolatebar-vulptrash"
+    },
+    {
+      "name": "resomistick-packed"
+    },
+    {
+      "name": "resomistick-trash"
+    },
+    {
+      "name": "resomistick"
+    },
+    {
+      "name": "salty-silkcrunch"
+    },
+    {
+      "name": "salty-silkcrunch-trash"
+    },
+    {
+      "name": "sugar-silkcrunch"
+    },
+    {
+      "name": "sugar-silkcrunch-trash"
+    },
+    {
+      "name": "drybugs"
+    },
+    {
+      "name": "drybugs-trash"
+    },
+    {
+      "name": "frog-on-stick"
+    },
+    {
+      "name": "frog-on-stick-trash"
+    },
+    {
+      "name": "candy"
+    },
+    {
+      "name": "candy-trash"
+    },
+    {
+      "name": "mouse-on-stick"
+    },
+    {
+      "name": "mouse-on-stick-trash"
+    },
+    {
+      "name": "cockroach-on-stick"
+    },
+    {
+      "name": "cockroach-on-stick-trash"
+    },
+    {
+      "name": "moth-on-stick"
+    },
+    {
+      "name": "choco-dog"
+    },
+    {
+      "name": "choco-dog-open"
+    },
+    {
+      "name": "choco-dog-open2"
+    },
+    {
+      "name": "choco-dog-open3"
+    },
+    {
+      "name": "choco-dog-open4"
+    },
+    {
+      "name": "choco-dog-trash"
+    }
+  ]
+}

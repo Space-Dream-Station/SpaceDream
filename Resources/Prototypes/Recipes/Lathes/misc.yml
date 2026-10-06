@@ -160,12 +160,13 @@
 - type: latheRecipe
   id: ClothingShoesBootsSpeed
   result: ClothingShoesBootsSpeed
-  completetime: 2
+  completetime: 15  # SD Tweak
   materials:
     Steel: 1500
     Plastic: 1000
     Silver: 500
     Copper: 1000  #ADT-BFUU-Tweak
+    ADTBScrystal: 100  # SD Tweak
 
 - type: latheRecipe
   id: ModularReceiver

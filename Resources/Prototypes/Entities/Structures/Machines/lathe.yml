@@ -223,6 +223,8 @@
     - ADTAdvancedMaterialsStatic
     # ADT-tweak-End
     dynamicPacks:
+    - SDSpecGlassesTech  #SD Tweak
+    - SDPowerCellMicroreactor  #SD Tweak
     - AdvancedTools
     - ScienceEquipment
     # - ScienceExplosives # ADT-Tweak

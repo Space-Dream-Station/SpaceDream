@@ -1,0 +1,179 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieResomiBlue
+  name: resomi plushie
+  description: SKREEEEEEEEEEEE!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Fun/Plushies/resomiblue.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieResomiSoundBlue
+      path: /Audio/ADT/Voice/Resomi/resomi_scream.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieResomiSoundBlue
+  - type: EmitSoundOnActivate
+    sound: *PlushieResomiSoundBlue
+  - type: EmitSoundOnTrigger
+    sound: *PlushieResomiSoundBlue
+  - type: EmitSoundOnCollide
+    sound: *PlushieResomiSoundBlue
+  - type: Edible
+    useSound: *PlushieResomiSoundBlue
+  - type: MeleeWeapon
+    soundHit: *PlushieResomiSoundBlue
+  - type: Clothing
+    quickEquip: false
+    sprite: _SD/Objects/Fun/Plushies/resomiblue.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieResomiRed
+  name: resomi plushie
+  description: SKREEEEEEEEEEEE!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Fun/Plushies/resomired.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieResomiSoundRed
+      path: /Audio/ADT/Voice/Resomi/resomi_scream.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieResomiSoundRed
+  - type: EmitSoundOnActivate
+    sound: *PlushieResomiSoundRed
+  - type: EmitSoundOnTrigger
+    sound: *PlushieResomiSoundRed
+  - type: EmitSoundOnCollide
+    sound: *PlushieResomiSoundRed
+  - type: Edible
+    useSound: *PlushieResomiSoundRed
+  - type: MeleeWeapon
+    soundHit: *PlushieResomiSoundRed
+  - type: Clothing
+    quickEquip: false
+    sprite: _SD/Objects/Fun/Plushies/resomired.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieResomiGreen
+  name: resomi plushie
+  description: SKREEEEEEEEEEEE!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Fun/Plushies/resomigreen.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieResomiSoundGreen
+      path: /Audio/ADT/Voice/Resomi/resomi_scream.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieResomiSoundGreen
+  - type: EmitSoundOnActivate
+    sound: *PlushieResomiSoundGreen
+  - type: EmitSoundOnTrigger
+    sound: *PlushieResomiSoundGreen
+  - type: EmitSoundOnCollide
+    sound: *PlushieResomiSoundGreen
+  - type: Edible
+    useSound: *PlushieResomiSoundGreen
+  - type: MeleeWeapon
+    soundHit: *PlushieResomiSoundGreen
+  - type: Clothing
+    quickEquip: false
+    sprite: _SD/Objects/Fun/Plushies/resomigreen.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieResomiPurple
+  name: resomi plushie
+  description: SKREEEEEEEEEEEE!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Fun/Plushies/resomipurp.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieResomiSoundPurp
+      path: /Audio/ADT/Voice/Resomi/resomi_scream.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieResomiSoundPurp
+  - type: EmitSoundOnActivate
+    sound: *PlushieResomiSoundPurp
+  - type: EmitSoundOnTrigger
+    sound: *PlushieResomiSoundPurp
+  - type: EmitSoundOnCollide
+    sound: *PlushieResomiSoundPurp
+  - type: Edible
+    useSound: *PlushieResomiSoundPurp
+  - type: MeleeWeapon
+    soundHit: *PlushieResomiSoundPurp
+  - type: Clothing
+    quickEquip: false
+    sprite: _SD/Objects/Fun/Plushies/resomipurp.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieResomiYellow
+  name: resomi plushie
+  description: SKREEEEEEEEEEEE!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Fun/Plushies/resomiyell.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieResomiSoundYell
+      path: /Audio/ADT/Voice/Resomi/resomi_scream.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieResomiSoundYell
+  - type: EmitSoundOnActivate
+    sound: *PlushieResomiSoundYell
+  - type: EmitSoundOnTrigger
+    sound: *PlushieResomiSoundYell
+  - type: EmitSoundOnCollide
+    sound: *PlushieResomiSoundYell
+  - type: Edible
+    useSound: *PlushieResomiSoundYell
+  - type: MeleeWeapon
+    soundHit: *PlushieResomiSoundYell
+  - type: Clothing
+    quickEquip: false
+    sprite: _SD/Objects/Fun/Plushies/resomiyell.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.09"
