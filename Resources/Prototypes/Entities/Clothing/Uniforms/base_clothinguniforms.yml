@@ -34,6 +34,8 @@
   #ADT-Tweak-Start
   - type: CoveredSlot
     slots: [underwearb, underweart]
+  - type: ADTAccessoryHolder
+    maxAccessories: 5
   #ADT-Tweak-End
 
 - type: entity
@@ -70,10 +72,10 @@
     slots: [underwearb, underweart]
   - type: Tag
     tags:
+      - ClothMade
+      - Recyclable
       - ADTJumpSuitSacrifice
       - WhitelistChameleon
-  - type: HidesSlots
-    hidesSlots: [ UNDERWEART, UNDERWEARB, POCKET ]
   #ADT-Tweak-End
 
 - type: entity

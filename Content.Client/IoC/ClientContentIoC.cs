@@ -5,7 +5,8 @@ using Content.Client.Clickable;
 using Content.Client.Corvax.DiscordAuth;
 using Content.Client.Corvax.JoinQueue;
 using Content.Client.Corvax.Sponsors;
-using Content.Client.Corvax.TTS;
+using Content.Shared.ADT.Sponsors;
+using Content.Client.ADT.TTS;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.FeedbackPopup;
@@ -34,6 +35,7 @@ using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
 using Content.Client.ADT.Export;
 using Content.Client.ADT.Discord;
+using Content.Client.ADT.JoinQueue;
 
 namespace Content.Client.IoC
 {
@@ -72,7 +74,13 @@ namespace Content.Client.IoC
             collection.Register<TitleWindowManager>();
             collection.Register<ClientsidePlaytimeTrackingManager>();
             collection.Register<SponsorsManager>(); // Corvax-Sponsors
+            // ADT-Tweak
+            collection.Register<Content.Client.ADT.Sponsors.SponsorManager>();
+            collection.Register<ISharedSponsorManager, Content.Client.ADT.Sponsors.SponsorManager>();
+            collection.Register<Content.Client.ADT.StateDiagnostics.StateDiagnosticsManager>();
+            // ADT-Tweak
             collection.Register<JoinQueueManager>(); // Corvax-Queue
+            collection.Register<QueueGamesManager>(); // ADT-Tweak: queue games
             collection.Register<DiscordAuthManager>(); // Corvax-DiscordAuth
             collection.Register<ExportManager>(); // ADT Export
             collection.Register<ClientFeedbackManager>();

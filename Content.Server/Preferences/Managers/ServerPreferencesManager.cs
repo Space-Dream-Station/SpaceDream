@@ -15,6 +15,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
+using Content.Shared.ADT.BodyTypes; // ADT-Tweak
 using Content.Shared.ADT.Language;
 using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.Traits;
@@ -41,6 +42,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IDependencyCollection _dependencies = default!;
         [Dependency] private readonly SponsorsManager _sponsors = default!;
+        [Dependency] private readonly Content.Server.ADT.Sponsors.SponsorManager _adtSponsors = default!;
         [Dependency] private readonly ILogManager _log = default!;
         [Dependency] private readonly UserDbDataManager _userDb = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -192,7 +194,8 @@ namespace Content.Server.Preferences.Managers
                     Color.FromHex(profile.EyeColor),
                     HairColorSerializer.Deserialize(profile.HairColor), // ADT-tweak: supports gradient (JSON array) and legacy single hex
                     Color.FromHex(profile.SkinColor),
-                    markings
+                    markings,
+                    profile.BodyType is { } bodyType ? new ProtoId<BodyTypePrototype>(bodyType) : (ProtoId<BodyTypePrototype>?) null // ADT-Tweak
                 ),
                 spawnPriority,
                 jobs,
@@ -203,7 +206,10 @@ namespace Content.Server.Preferences.Managers
                 new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar),
                 languages,
                 profile.OOCNotes,
-                profile.HeadshotUrl
+                // ADT-Tweak-Start
+                profile.HeadshotUrl,
+                profile.ExploitableInfo
+                // ADT-Tweak-End
             );
         }
 
@@ -451,7 +457,7 @@ namespace Content.Server.Preferences.Managers
             msg.Preferences = prefsData.Prefs;
             msg.Settings = new GameSettings
             {
-                MaxCharacterSlots = MaxCharacterSlots
+                MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId) // ADT-Tweak
             };
             _netManager.ServerSendMessage(msg, session.Channel);
         }
@@ -466,6 +472,7 @@ namespace Content.Server.Preferences.Managers
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
             var extraSlots = _sponsors.TryGetInfo(userId, out var sponsor) ? sponsor.ExtraSlots : 0;
+            extraSlots = Math.Max(extraSlots, _adtSponsors.GetData(userId).ExtraCharacterSlots); // ADT-Tweak
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End

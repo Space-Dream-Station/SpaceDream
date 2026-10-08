@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: BaseItem
   id: MaterialBase
@@ -95,6 +95,10 @@
   - type: Healing
     damageContainers:
       - Biological
+      # ADT-Tweak Start: New healing containers
+      - ADTBiologicalShadekin
+      - ADTBiologicalDrask
+      # ADT-Tweak End
     damage:
       types:
         Blunt: 0 # ADT tweak
@@ -364,6 +368,11 @@
     energy: 2.7
     color: "#4faffb"
     mask: /Textures/ADT/Effects/Lightmasks/circle_b.png # ADT tweak
+  # ADT-Tweak-Start
+  - type: ADTDehairable
+    result: ADTMaterialHairlessHide1
+    multiplier: 3
+  # ADT-Tweak-End
 
 - type: entity
   parent: MaterialBase
@@ -384,6 +393,11 @@
   - type: Tag
     tags:
     - HideCorgi
+  # ADT-Tweak-Start
+  - type: ADTDehairable
+    result: ADTMaterialHairlessHide1
+    multiplier: 3
+  # ADT-Tweak-End
 
 - type: entity
   parent: MaterialBase
@@ -776,6 +790,7 @@
           Quantity: 3
   - type: Item
     heldPrefix: bones
+    size: Small # ADT-Tweak
 
 - type: entity
   parent: MaterialBones
@@ -837,6 +852,11 @@
   - type: Tag
     tags:
     - GoliathPlate
+  # ADT-Tweak-Start
+  - type: ADTDehairable
+    result: ADTMaterialHairlessHide1
+    multiplier: 3
+  # ADT-Tweak-End
 
 - type: entity
   parent: MaterialGoliathHide

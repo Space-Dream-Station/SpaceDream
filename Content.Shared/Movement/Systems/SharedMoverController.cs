@@ -111,6 +111,10 @@ public abstract partial class SharedMoverController : VirtualController
         InitializeInput();
         InitializeRelay();
         InitializeTileMovement(); // ADT-Tweak
+        InitializeInvertRun(); // ADT tweak
+        // ADT-Tweak-Start
+        InitializeDrunkDrift();
+        // ADT-Tweak-End
         Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
         Subs.CVar(_configManager, CCVars.MinFriction, value => _minDamping = value, true);
         Subs.CVar(_configManager, CCVars.AirFriction, value => _airDamping = value, true);
@@ -364,6 +368,10 @@ public abstract partial class SharedMoverController : VirtualController
             accel *= tileDef?.MobAcceleration ?? 1f;
         }
 
+        // ADT-Tweak-Start: apply drunken sway during movement
+        ApplyDrunkWobble(uid, ref wishDir);
+        // ADT-Tweak-End
+
         // This way friction never exceeds acceleration when you're trying to move.
         // If you want to slow down an entity with "friction" you shouldn't be using this system.
         if (wishDir != Vector2.Zero)
@@ -610,12 +618,6 @@ public abstract partial class SharedMoverController : VirtualController
 
         mobMover.StepSoundDistance -= distanceNeeded;
 
-        if (FootstepModifierQuery.TryComp(uid, out var moverModifier))
-        {
-            sound = moverModifier.FootstepSoundCollection;
-            return sound != null;
-        }
-
         // ADT-Tweak-Start
         if (_inventory.TryGetInventoryEntity<FootstepModifierComponent>((uid, null), out var footstepEnt)
             && footstepEnt.Comp != null)
@@ -623,7 +625,15 @@ public abstract partial class SharedMoverController : VirtualController
             sound = footstepEnt.Comp.FootstepSoundCollection;
             return sound != null;
         }
+        // ADT-Tweak-End
 
+        if (FootstepModifierQuery.TryComp(uid, out var moverModifier))
+        {
+            sound = moverModifier.FootstepSoundCollection;
+            return sound != null;
+        }
+
+        // ADT-Tweak-Start
         bool haveShoes = _inventory.TryGetSlotEntity(uid, "shoes", out _)
             || _tags.HasTag(uid, SiliconFootstepSoundTag);
         return TryGetFootstepSound(uid, xform, haveShoes, out sound, tileDef: tileDef);

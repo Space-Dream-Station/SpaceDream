@@ -297,9 +297,7 @@
     containers:
       entity_storage: !type:NestedSelector
         tableId: FillResearchDirectorHardsuit
-  - type: AccessReader
-    access: [ [ "ResearchDirector" ] ]
-  # SD edit start
+  # ADT-Tweak start
   - type: UserInterface
     interfaces:
       enum.SuitStorageUiKey.Key:
@@ -308,7 +306,9 @@
     options:
     - ADTClothingModsuitBackMinerva
     - ClothingOuterHardsuitRd
-  # SD edit end
+  # ADT-Tweak end
+  - type: AccessReader
+    access: [ [ "ResearchDirector" ] ]
 
 #HOS's hardsuit
 - type: entity

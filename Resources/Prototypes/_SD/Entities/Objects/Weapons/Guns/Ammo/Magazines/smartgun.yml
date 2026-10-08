@@ -17,6 +17,9 @@
       - SD_Cartridge792
     proto: SD_Cartridge792mm
     capacity: 100
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
   - type: Sprite
     sprite: _SD/Objects/Weapons/Guns/Ammunition/Magazines/magazine_smart_gun.rsi
     layers:
@@ -41,6 +44,9 @@
       - SD_Cartridge792
     proto: SD_Cartridge792mmRad
     capacity: 100
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
   - type: Sprite
     sprite: _SD/Objects/Weapons/Guns/Ammunition/Magazines/magazine_smart_gun_deplated.rsi
     layers:

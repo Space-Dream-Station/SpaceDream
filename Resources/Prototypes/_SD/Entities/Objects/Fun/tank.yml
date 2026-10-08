@@ -26,7 +26,7 @@
         layer:
         - WallLayer
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: Mech
     startingEquipment: ["ADTMechGunSRM8","ADTMechGunUltraAC2"]
     modifiers:
@@ -115,7 +115,7 @@
         layer:
         - WallLayer
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: Mech
     modifiers:
       coefficients: #Коэффициент для тяжелобронированных мехов
@@ -203,7 +203,7 @@
         layer:
         - WallLayer
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: Mech
     modifiers:
       coefficients: #Коэффициент для тяжелобронированных мехов
