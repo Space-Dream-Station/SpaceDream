@@ -32,7 +32,6 @@
   - ClothingShoesBootsMagSci
   # - ClothingShoesBootsMoon # ADT-Tweak - убираем луноходы
   - ClothingShoesBootsSpeed #SD tweak
-  - ModsuitModSpeedboot # SD Tweak
   # - ADTClothingOuterExoskeletonBase #SD tweak
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
@@ -101,7 +100,7 @@
   - PowerCageRechargerCircuitboard
   - AnalysisComputerCircuitboard
   - AnomalyVesselCircuitboard
-  - AnomalyVesselExperimentalCircuitboard # SD Tweak
+  # - AnomalyVesselExperimentalCircuitboard SD Tweak
   - AnomalySynchronizerCircuitboard
   - ADTBotanicalSeedDNAManipulatorCircuitboard #ADT-Tweak
   - APECircuitboard

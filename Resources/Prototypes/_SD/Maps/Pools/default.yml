@@ -1,28 +1,32 @@
 - type: gameMapPool
   id: SDMapPool
   maps:
-  # - Atlas
-  # - Bagel
-  # - Box
-  # - Cog
-  # - Cluster
-  # - Core
-  # - Fland
-  # - Marathon
-  # - Meta
-  # - Oasis
-  # - Omega
-  # - Origin
-  # - Saltern
-  # - Packed
-  # - Reach
-  # - Train
+  - ADT_Fland
+  - ADT_Kerberos
+  - ADT_Origin
+  - ADT_Avrit
+  - ADT_Triumph
+  - ADT_Box
+  - ADT_Marathon
+  - ADT_Meta
+  # - ADT_Train
+  - ADT_Bagel
+  - ADT_Barratry
+  #- ADT_Packed
+  - ADT_Saltern
+  - ADT_Aspid
+  - ADT_Cluster
+  - ADT_Reach
+  - ADT_Silly
+  - ADT_Pump
+  - ADT_Sphere
+
 
 # SD Maps Базовые Актуальные
 
   - SD_Flicker
   - SD_Newton
-  - SD_Pascal
+  # - SD_Pascal
   - SD_Joule
-  - SD_Barracuda
+  # - SD_Barracuda
   - SD_Whiteout

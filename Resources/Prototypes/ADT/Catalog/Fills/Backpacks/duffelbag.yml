@@ -315,6 +315,7 @@
         - id: ADTModsuitModWelding
         - id: ADTModsuitModLight
         - id: ADTModsuitModJetpack
+        - id: ModsuitModSpeedboot # SD Tweak
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ADTClothingBackpackDuffelSyndicateCascade

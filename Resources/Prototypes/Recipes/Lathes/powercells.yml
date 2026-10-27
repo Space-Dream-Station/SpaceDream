@@ -66,12 +66,12 @@
   completetime: 15  #SD Tweak
   materials:
 # SD Tweak Start
-    Steel: 1500
+    Steel: 500
     Copper: 1000
-    Gold: 500
+    Gold: 700
     Zinc: 1000
-    Silver: 1000
-    Uranium: 1500
+    Silver: 700
+    Uranium: 500
 # SD Tweak End
 
 # Power cages

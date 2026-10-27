@@ -295,7 +295,6 @@
       - state: ""
   - type: Tag
     tags:
-      - FoodSnack
       - ClothMade
   - type: SolutionContainerManager
     solutions:
@@ -349,7 +348,6 @@
       - state: ""
   - type: Tag
     tags:
-      - FoodSnack
       - ClothMade
   - type: SolutionContainerManager
     solutions:

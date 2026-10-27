@@ -57,9 +57,13 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: Tag
-    tags:
-    - HidesHair
+  # SD Tweak Start
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+  # SD Tweak End
 
 - type: entity
   parent: ADTClothingHeadHelmetMiner

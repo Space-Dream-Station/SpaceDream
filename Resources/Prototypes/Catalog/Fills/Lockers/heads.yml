@@ -189,10 +189,13 @@
     - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
-    - id: RCD
-    - id: RCDAmmo
-      amount: !type:RangeNumberSelector
-        range: 1, 3
+    # SD Tweak Start
+    # - id: RCD
+    # - id: RCDAmmo
+    #   amount: !type:RangeNumberSelector
+    #     range: 1, 3
+    - id: RCDRecharging
+    # SD Tweak End
     - id: RubberStampCE
     - id: MetalFoamGrenade
     # ADT-Tweak-Start
