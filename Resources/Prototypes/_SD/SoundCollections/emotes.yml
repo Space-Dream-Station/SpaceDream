@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: FemaleVulpaLaugh
+  files:
+    - /Audio/_SD/Voice/Vulpkanin/laugh_female_1.ogg
+    - /Audio/_SD/Voice/Vulpkanin/laugh_female_2.ogg
+    - /Audio/_SD/Voice/Vulpkanin/laugh_female_3.ogg

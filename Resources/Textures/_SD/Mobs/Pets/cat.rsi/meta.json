@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "EffinXexe",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "cat3",
+      "directions": 4
+    },
+    {
+      "name": "cat3_dead"
+    },
+    {
+      "name": "cat4",
+      "directions": 4
+    },
+    {
+      "name": "cat4_dead"
+    }
+  ]
+}

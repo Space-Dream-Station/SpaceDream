@@ -1,0 +1,77 @@
+- type: entity
+  name: Кики
+  parent: MobCat
+  id: MobCatKiki
+  description: Это не Мими.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SD/Mobs/Pets/cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat3
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat3
+      Critical:
+        Base: cat3_dead
+      Dead:
+        Base: cat3_dead
+  - type: NpcFactionMember
+    factions:
+      - PetsNT
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+  - type: LanguageSpeaker
+    languages:
+      Cat: Speak
+      GalacticCommon: Understand
+
+- type: entity
+  name: Мими
+  parent: MobCat
+  id: MobCatMimi
+  description: Это не Кики.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SD/Mobs/Pets/cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat4
+      Critical:
+        Base: cat4_dead
+      Dead:
+        Base: cat4_dead
+  - type: NpcFactionMember
+    factions:
+      - PetsNT
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+  - type: LanguageSpeaker
+    languages:
+      Cat: Speak
+      GalacticCommon: Understand

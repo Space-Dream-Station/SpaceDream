@@ -1,36 +1,17 @@
 - type: entity
   parent: BaseItem
-  id: TimerTriggerUsefull
-  name: управляемый таймер-триггер
-  description: Этот триггер создан для работы вне устройств. Идеально подходит для всевозможных связок сигналов!
+  id: TriggerUsefullBase
+  name: разобранный передатчик сигналов
+  description: Обыкновенный передатчик сигналов, разве что небольшая панель позади него теперь открыта, позволяя модифицировать его почти как душе угодно.
   components:
-  - type: Sprite
-    sprite: _SD/Objects/Devices/timer.rsi
-    state: timer
   - type: Item
-    size: Tiny
-  - type: StaticPrice
-    price: 40
-  - type: Anchorable
-  - type: TriggerOnUse
-  - type: TriggerOnSignal
-  - type: TimerTrigger
-    keysIn:
-    - trigger
-    delay: 10
-    delayOptions: [1, 3, 5, 10, 15, 25, 30, 35, 45, 50, 60]
-    initialBeepDelay: 0
-    beepSound: /Audio/Machines/Nuke/general_beep.ogg
-  - type: SignalOnTrigger
-    keysIn:
-    - timer
-    port: Trigger
-  - type: DeviceLinkSink
-    ports:
-    - Trigger
-  - type: DeviceLinkSource
-    ports:
-    - Trigger
+    size: Small
+  - type: Sprite
+    sprite: Objects/Devices/signaller.rsi
+    state: signaller
+  - type: Construction
+    graph: UsefullTrigger
+    node: empty
 
 - type: entity
   parent: BaseItem
@@ -39,7 +20,7 @@
   description: Этот триггер создан для работы вне устройств. Идеально подходит для всевозможных связок сигналов!
   components:
   - type: Item
-    size: Tiny
+    size: Small
   - type: Sprite
     sprite: _SD/Objects/Devices/voice.rsi
     state: voice
@@ -62,3 +43,43 @@
     receiveFrequencyId: BasicDevice
   - type: WirelessNetworkConnection
     range: 15
+  - type: Construction
+    graph: UsefullTrigger
+    node: trigger_voice
+
+- type: entity
+  parent: BaseItem
+  id: TimerTriggerUsefull
+  name: управляемый таймер-триггер
+  description: Этот триггер создан для работы вне устройств. Идеально подходит для всевозможных связок сигналов!
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Devices/timer.rsi
+    state: timer
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 40
+  - type: Anchorable
+  - type: TriggerOnUse
+  - type: TriggerOnSignal
+  - type: TimerTrigger
+    keysIn:
+    - trigger
+    delay: 10
+    delayOptions: [1, 3, 5, 10, 15, 25, 30, 35, 45, 50, 60]
+    initialBeepDelay: 0
+    beepSound: /Audio/Machines/Nuke/general_beep.ogg
+  - type: SignalOnTrigger
+    keysIn:
+    - timer
+    port: Trigger
+  - type: DeviceLinkSink
+    ports:
+    - Trigger
+  - type: DeviceLinkSource
+    ports:
+    - Trigger
+  - type: Construction
+    graph: UsefullTrigger
+    node: trigger_timer

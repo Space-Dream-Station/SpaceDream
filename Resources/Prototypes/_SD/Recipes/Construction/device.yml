@@ -1,0 +1,15 @@
+- type: construction
+  id: TimerTriggerUsefull
+  graph: UsefullTrigger
+  startNode: start
+  targetNode: trigger_timer
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: VoiceTriggerUsefull
+  graph: UsefullTrigger
+  startNode: start
+  targetNode: trigger_voice
+  category: construction-category-tools
+  objectType: Item

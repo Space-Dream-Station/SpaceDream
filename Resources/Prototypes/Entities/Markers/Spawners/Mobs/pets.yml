@@ -42,6 +42,10 @@
     - MobCatException
     - MobCatFloppa
     - MobBingus
+    # SD Tweak Start
+    - MobCatKiki
+    - MobCatMimi
+    # SD Tweak End
 
 - type: entity
   parent: MarkerBase

@@ -8,8 +8,6 @@
     sprite: _SD/Objects/Devices/timetrigger.rsi
     state: timetrigger
   - type: TriggerOnUse
-  - type: SpawnOnTrigger
-    proto: Chronofield
   - type: UseDelayOnTrigger
   - type: UseDelayTriggerCondition
   - type: TriggerOnSignal
@@ -22,5 +20,7 @@
   - type: DeviceLinkSink
     ports:
     - Trigger
+  - type: SpawnOnTrigger
+    proto: Chronofield
   - type: UseDelay
     delay: 120

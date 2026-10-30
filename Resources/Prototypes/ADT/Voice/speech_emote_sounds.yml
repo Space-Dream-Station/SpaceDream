@@ -786,7 +786,7 @@
     Scream:
       collection: NesFemaleVulpaScreams
     Laugh:
-      collection: FemaleLaugh
+      collection: FemaleVulpaLaugh # SD Tweak
     Sneeze:
       collection: FemaleSneezes
     Cough:

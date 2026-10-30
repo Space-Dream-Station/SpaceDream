@@ -4,10 +4,6 @@
   - TimerTrigger
   - SignalTrigger
   - VoiceTrigger
-  # SD Tweak Start
-  - TimerTriggerUsefull
-  - VoiceTriggerUsefull
-  # SD Tweak End
 
 - type: latheRecipePack
   id: ADTScienceExplosives

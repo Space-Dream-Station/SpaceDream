@@ -1,0 +1,27 @@
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCatKiki
+  name: спавнер Кики
+  suffix: CMO Pet
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCatKiki
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCatMimi
+  name: спавнер Мими
+  suffix: CMO Pet
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCatMimi
