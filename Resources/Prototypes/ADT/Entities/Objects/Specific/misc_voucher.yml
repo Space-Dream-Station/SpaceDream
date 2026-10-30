@@ -95,7 +95,7 @@
         type: MiningVoucherBoundUserInterface
   - type: MiningVoucher
     kits:
-    - WeaponHoSUnika
+    - WeaponHoSShotgun # SD Tweak
     - WeaponHoSMultiphase
     - WeaponHoSBat
     - SDDragonManual # SD Tweak

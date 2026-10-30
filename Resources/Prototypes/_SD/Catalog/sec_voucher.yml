@@ -1,0 +1,9 @@
+- type: thiefBackpackSet
+  id: WeaponHoSShotgun
+  name: hos-voucher-sd-shotgun-name
+  description: hos-voucher-sd-shotgun-description
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    state: icon
+  content:
+  - WeaponEnergyShotgun

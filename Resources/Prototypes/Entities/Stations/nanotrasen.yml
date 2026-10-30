@@ -33,6 +33,25 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    # SD Tweak Start
+    - type: GridSpawn
+      groups:
+        ruins: !type:GridSpawnGroup
+          hide: false
+          nameGrid: true
+          minCount: 1
+          maxCount: 2
+          stationGrid: false
+          paths:
+          - /Maps/ADTMaps/Ruins/bss_unluck.yml
+          - /Maps/ADTMaps/Ruins/hotel_trivago.yml
+          - /Maps/ADTMaps/Ruins/kamikaze.yml
+          - /Maps/ADTMaps/Ruins/rnd_debris.yml
+          - /Maps/ADTMaps/Ruins/sindy_apling.yml
+          - /Maps/ADTMaps/Ruins/syndi_base.yml
+          - /Maps/ADTMaps/Ruins/ussp_asteroid.yml
+          - /Maps/ADTMaps/Ruins/ussp_debris.yml
+    # SD Tweak End
 
 - type: entity
   id: NanotrasenCentralCommand

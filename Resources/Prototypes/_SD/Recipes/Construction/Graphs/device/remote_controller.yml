@@ -1,0 +1,41 @@
+- type: constructionGraph
+  id: UsefullTrigger
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: empty
+      steps:
+      - tag: RemoteSignaller
+        icon:
+          sprite: Objects/Devices/signaller.rsi
+          state: signaller
+        name: construction-graph-tag-remote-signaller
+        doAfter: 2
+  - node: empty
+    entity: TriggerUsefullBase
+    edges:
+    - to: trigger_voice
+      steps:
+      - tag: VoiceTrigger
+        icon:
+          sprite: Objects/Devices/voice.rsi
+          state: voice
+        name: construction-graph-tag-voice-trigger
+      - material: Cable
+        amount: 2
+        doAfter: 1
+    - to: trigger_timer
+      steps:
+      - tag: TimerTrigger
+        icon:
+          sprite: Objects/Devices/timer.rsi
+          state: timer
+        name: construction-graph-tag-timer-trigger
+      - material: Cable
+        amount: 2
+        doAfter: 1
+  - node: trigger_voice
+    entity: VoiceTriggerUsefull
+  - node: trigger_timer
+    entity: TimerTriggerUsefull

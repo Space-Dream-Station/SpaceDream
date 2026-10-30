@@ -439,6 +439,7 @@
   loadouts:
   - ADTClothingOuterWinterBlueshield
   - ADTClothingBlueshieldArmor
+  - ClothingOuterWinterBso # SD Loadout
 - type: loadoutGroup
   id: SD_Blueshield_Shoes
   name: loadout-group-blueshield-shoes
@@ -866,12 +867,12 @@
   - ADTNeckSalvageSpecialistCape
   # SD Loadout Start
   - ADTNeckMinerCCape
-  - ADTNeckMinerSCape
-  - ADTNeckMinerGCape
-  - ADTNeckMinerPCape
-  - ADTNeckMinerECape
-  - ADTNeckMinerDCape
-  - ADTNeckMinerRCape
+  - SDNeckMinerSCape
+  - SDNeckMinerGCape
+  - SDNeckMinerPCape
+  - SDNeckMinerECape
+  - SDNeckMinerDCape
+  - SDNeckMinerRCape
   # SD Loadout End
 
 # ШАХТЁР
