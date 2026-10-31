@@ -1049,3 +1049,13 @@ SiliconChargerIndustrial: BorgCharger
 
 # ADT 07.09.2026
 LockerCorrectionOfficer: ADTLockerCorrectionOfficer
+
+# sd 2026-10-31, missing maps prototypes
+ADTIndustrialSMES: SMESAdvanced
+DrinkMoscowMuleGlass: DrinkMoscowMule
+ActionStartFishing: ADTActionFishingCast
+ADTHeadResomi: ADTOrganResomiHead
+ADTHeadTajaran: ADTOrganTajaranHead
+ADTHeadUrsus: ADTOrganUrsusHead
+ADTTailVulpkanin: null
+ADTClothingOuterCoatCyberSun: null
