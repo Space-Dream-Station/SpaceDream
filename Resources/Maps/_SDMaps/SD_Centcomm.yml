@@ -47546,7 +47546,7 @@ entities:
         neck: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 105
+          ent: null
         mask: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -47590,7 +47590,7 @@ entities:
         mask: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 136
+          ent: null
         eyes: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -48186,9 +48186,6 @@ entities:
     - type: Transform
       parent: 108
     - type: SpecialRespawn
-      stationMap:
-      - invalid
-      - 1
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage

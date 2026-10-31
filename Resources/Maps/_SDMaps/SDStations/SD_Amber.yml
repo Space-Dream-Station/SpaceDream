@@ -25502,8 +25502,6 @@ entities:
       pos: 13.5,-25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
       - 11380
@@ -85119,8 +85117,6 @@ entities:
       pos: -19.5,-49.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11362
       - 11348
@@ -85508,8 +85504,6 @@ entities:
       pos: 15.5,-23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
       - 11380
@@ -85519,8 +85513,6 @@ entities:
       pos: 9.5,-25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
       - 11380
@@ -107161,8 +107153,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0000FFFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
       - 11380
@@ -107284,8 +107274,6 @@ entities:
     - type: AtmosPipeColor
       color: '#FF0000FF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
       - 11380

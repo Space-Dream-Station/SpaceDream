@@ -378,8 +378,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,4.5
       parent: 2
-    - type: PaintableAirlock
-      department: Command
   - uid: 46
     components:
     - type: Transform
@@ -1960,8 +1958,6 @@ entities:
       pos: 0.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 43
   - uid: 251
@@ -1971,8 +1967,6 @@ entities:
       pos: 2.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 43
   - uid: 252
@@ -1981,8 +1975,6 @@ entities:
       pos: -0.5,5.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 43
   - uid: 253
@@ -1991,8 +1983,6 @@ entities:
       pos: 3.5,4.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 42
 - proto: GasVentScrubber

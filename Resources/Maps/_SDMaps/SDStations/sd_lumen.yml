@@ -28917,9 +28917,6 @@ entities:
       pos: -62.460056,15.648671
       parent: 2
     - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: ActiveUserInterface
 - proto: BoxBeanbag
   entities:
@@ -135239,7 +135236,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 18948
     components:
     - type: Transform
@@ -135500,7 +135496,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 35.5,-31.5
       parent: 2
-    - type: Timer
   - uid: 18984
     components:
     - type: Transform
@@ -136037,7 +136032,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 19059
     components:
     - type: Transform
@@ -136504,7 +136498,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -38.5,20.5
       parent: 2
-    - type: Timer
   - uid: 19126
     components:
     - type: Transform
@@ -137687,7 +137680,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 19316
     components:
     - type: Transform
@@ -145335,7 +145327,6 @@ entities:
           startTime: 11530.3551363
           length: 0.4
     - type: RMCReturnToInventory
-      user: invalid
 - proto: SDPlushieSammy
   entities:
   - uid: 20706

@@ -3775,8 +3775,6 @@ entities:
       pos: -0.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 823
     components:
     - type: Transform
@@ -3784,8 +3782,6 @@ entities:
       pos: 1.5,10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
 - proto: CrateEmergencyAdvancedKit
   entities:
   - uid: 1262
