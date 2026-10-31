@@ -4867,7 +4867,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: ADT_Cluster_Legacy
+      id: SD_Pascal
     - type: SupermatterSpreaderGrid
     - type: ImplicitRoof
     - type: TileHistory
