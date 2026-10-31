@@ -37559,7 +37559,6 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 25
-      attachedEntity: invalid
 - proto: ActionToggleInternals
   entities:
   - uid: 29
@@ -115243,8 +115242,6 @@ entities:
       pos: -25.5,34.5
       parent: 2
     - type: Strap
-      buckledEntities:
-      - invalid
     - type: HealOnBuckle
       sleepAction: 26
     - type: HealOnBuckleHealing
@@ -123358,8 +123355,6 @@ entities:
       pos: -38.5,-6.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 31749
   - uid: 13054
@@ -124480,8 +124475,6 @@ entities:
       pos: -24.5,36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 234
   - uid: 13178
@@ -124491,8 +124484,6 @@ entities:
       pos: -14.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
   - uid: 13179
@@ -124502,8 +124493,6 @@ entities:
       pos: -13.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 195
   - uid: 13180
@@ -161989,8 +161978,6 @@ entities:
       pos: -26.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 210
       - 234
@@ -162513,8 +162500,6 @@ entities:
       pos: -17.5,-55.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 233
     - type: AtmosPipeColor
@@ -162537,8 +162522,6 @@ entities:
       pos: -31.5,37.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 234
     - type: AtmosPipeColor
@@ -162560,8 +162543,6 @@ entities:
       pos: -39.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 31749
     - type: AtmosPipeColor
@@ -163885,8 +163866,6 @@ entities:
       pos: -17.5,-56.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 233
     - type: AtmosPipeColor
@@ -163898,8 +163877,6 @@ entities:
       pos: -31.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 234
     - type: AtmosPipeColor
@@ -163921,8 +163898,6 @@ entities:
       pos: -41.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 31749
     - type: AtmosPipeColor

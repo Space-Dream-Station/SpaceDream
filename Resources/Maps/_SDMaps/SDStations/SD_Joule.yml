@@ -25534,26 +25534,18 @@ entities:
       parent: 1031
     - type: Physics
       canCollide: False
-    missingComponents:
-    - Item
-    - Pullable
   - uid: 1033
     components:
     - type: Transform
       parent: 1031
     - type: Physics
       canCollide: False
-    missingComponents:
-    - Item
-    - Pullable
   - uid: 1034
     components:
     - type: Transform
       parent: 1031
     - type: Physics
       canCollide: False
-    missingComponents:
-    - Pullable
   - uid: 1037
     components:
     - type: Transform
@@ -25566,18 +25558,12 @@ entities:
       parent: 1038
     - type: Physics
       canCollide: False
-    missingComponents:
-    - Item
-    - MovedByPressure
-    - Pullable
   - uid: 1040
     components:
     - type: Transform
       parent: 1038
     - type: Physics
       canCollide: False
-    missingComponents:
-    - Item
   - uid: 1041
     components:
     - type: Transform

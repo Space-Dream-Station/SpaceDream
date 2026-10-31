@@ -21441,8 +21441,6 @@ entities:
     - type: Transform
       pos: 41.50011,-51.76378
       parent: 2
-    - type: FishingRod
-      throwLureActionEntity: 17
     - type: ActionsContainer
     - type: ContainerContainer
       containers:
@@ -102072,8 +102070,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0000FFFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 845
   - uid: 13006

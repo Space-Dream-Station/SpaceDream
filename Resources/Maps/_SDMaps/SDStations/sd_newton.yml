@@ -40452,7 +40452,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: ADT_Avrit
+      id: SD_Newton
     - type: IFF
       color: '#D9D99BFF'
     - type: ImplicitRoof

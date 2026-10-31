@@ -1184,3 +1184,14 @@ ADTTendrilBScrab: ADTTendrilRandomThreat
 # ADT-Tweak: remove Music song
 ADTBoxMusicDisksSyndicate: null
 ADTMusicDiskShanson: null
+
+# sd 2026-10-31, missing maps prototypes
+ADTIndustrialSMES: SMESAdvanced
+DrinkMoscowMuleGlass: DrinkMoscowMule
+ActionStartFishing: ADTActionFishingCast
+ADTHeadResomi: ADTOrganResomiHead
+ADTHeadTajaran: ADTOrganTajaranHead
+ADTHeadUrsus: ADTOrganUrsusHead
+ADTTailVulpkanin: null
+ADTClothingOuterCoatCyberSun: null
+
