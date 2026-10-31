@@ -4,23 +4,22 @@ using Content.Shared.Light.Components;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Weather;
 using Robust.Client.Graphics;
-using Robust.Shared.Map.Components;
 
 namespace Content.Client.Overlays;
 
 public sealed partial class StencilOverlay
 {
-    private List<Entity<MapGridComponent>> _grids = new();
-    private readonly Dictionary<EntityUid, Vector2> _weatherOffsets = new(); // ADT-Tweak
+    // ADT-Tweak-Start
+    private readonly Dictionary<EntityUid, (Vector2 Offset, Angle Rotation)> _weatherOffsets = new();
+    private readonly Dictionary<(EntityUid, IClydeViewport), (Vector2 Center, Vector2 Shift)> _weatherAnchors = new();
+    private readonly List<(EntityUid, IClydeViewport)> _staleWeatherAnchors = new();
+    // ADT-Tweak-End
 
     private void DrawWeather(
         in OverlayDrawArgs args,
-        CachedResources res,
-        HashSet<Entity<WeatherStatusEffectComponent, StatusEffectComponent>> weathers,
-        Matrix3x2 invMatrix)
+        HashSet<Entity<WeatherStatusEffectComponent, StatusEffectComponent>> weathers)
     {
         var worldHandle = args.WorldHandle;
-        var mapId = args.MapId;
         var worldAABB = args.WorldAABB;
         var worldBounds = args.WorldBounds;
         var position = args.Viewport.Eye?.Position.Position ?? Vector2.Zero;
@@ -28,36 +27,16 @@ public sealed partial class StencilOverlay
         // Cut out the irrelevant bits via stencil
         // This is why we don't just use parallax; we might want specific tiles to get drawn over
         // particularly for planet maps or stations.
-        worldHandle.RenderInRenderTarget(res.Blep!,
-            () =>
+        var stencil = _gridStencil.GetTileStencil(args,
+            "weather-blocked",
+            "weather-blocked-grid-stencil",
+            (grid, tile) =>
             {
-                var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
-                _grids.Clear();
-
-                // idk if this is safe to cache in a field and clear sloth help
-                _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _grids);
-
-                foreach (var grid in _grids)
-                {
-                    var matrix = _transform.GetWorldMatrix(grid, xformQuery);
-                    var matty = Matrix3x2.Multiply(matrix, invMatrix);
-                    worldHandle.SetTransform(matty);
-                    _entManager.TryGetComponent(grid.Owner, out RoofComponent? roofComp);
-
-                    foreach (var tile in _map.GetTilesIntersecting(grid.Owner, grid, worldAABB))
-                    {
-                        // Ignored tiles for stencil
-                        if (_weather.CanWeatherAffect((grid.Owner, grid, roofComp), tile))
-                            continue;
-
-                        var gridTile = new Box2(tile.GridIndices * grid.Comp.TileSize,
-                            (tile.GridIndices + Vector2i.One) * grid.Comp.TileSize);
-
-                        worldHandle.DrawRect(gridTile, Color.White);
-                    }
-                }
-            },
-            Color.Transparent);
+                // ADT-Tweak-Start
+                // Ignored tiles for stencil.
+                return !_weatherCache.CanWeatherAffect(grid, tile);
+                // ADT-Tweak-End
+            });
 
         // ADT-Tweak-Start
         var curTime = _timing.RealTime;
@@ -68,19 +47,23 @@ public sealed partial class StencilOverlay
         foreach (var (uid, weather, _) in weathers)
         {
             var hash = (uint) uid.GetHashCode();
-            weatherOffsets[uid] = new Vector2(hash % 2000 - 1000f, hash / 2000 % 2000 - 1000f);
+            var rotation = GetWeatherRotation(uid);
+            var shift = GetWeatherShift(uid, args.Viewport, worldAABB.Center, rotation);
+            weatherOffsets[uid] = (new Vector2(hash % 2000 - 1000f, hash / 2000 % 2000 - 1000f) + shift, rotation);
 
             if (weather.GroundSprite != null)
                 hasGroundLayer = true;
         }
 
+        PruneWeatherAnchors();
+
         if (hasGroundLayer)
-            DrawWeatherGround(args, res, weathers, invMatrix, weatherOffsets, curTime);
+            DrawWeatherGround(args, stencil, weathers, weatherOffsets, curTime);
         // ADT-Tweak-End
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_protoManager.Index(StencilMask).Instance());
-        worldHandle.DrawTextureRect(res.Blep!.Texture, worldBounds);
+        worldHandle.DrawTextureRect(stencil.Texture, worldBounds);
 
         foreach (var (uid, weather, status) in weathers)
         {
@@ -96,8 +79,8 @@ public sealed partial class StencilOverlay
                 curTime,
                 position,
                 weather.Scrolling ?? Vector2.Zero,
-                weatherOffsets[uid],
-                GetWeatherRotation(uid),
+                weatherOffsets[uid].Offset,
+                weatherOffsets[uid].Rotation,
                 (weather.Color ?? Color.White).WithAlpha(alpha));
             // ADT-Tweak-End
         }
@@ -109,54 +92,32 @@ public sealed partial class StencilOverlay
     // ADT-Tweak-Start
     private void DrawWeatherGround(
         in OverlayDrawArgs args,
-        CachedResources res,
+        IRenderTexture blockedStencil,
         HashSet<Entity<WeatherStatusEffectComponent, StatusEffectComponent>> weathers,
-        Matrix3x2 invMatrix,
-        Dictionary<EntityUid, Vector2> weatherOffsets,
+        Dictionary<EntityUid, (Vector2 Offset, Angle Rotation)> weatherOffsets,
         TimeSpan curTime)
     {
         var worldHandle = args.WorldHandle;
-        var mapId = args.MapId;
         var worldAABB = args.WorldAABB;
         var worldBounds = args.WorldBounds;
         var position = args.Viewport.Eye?.Position.Position ?? Vector2.Zero;
 
-        worldHandle.RenderInRenderTarget(res.GroundBlep!,
-            () =>
+        var groundStencil = _gridStencil.GetTileStencil(args,
+            "weather-ground",
+            "weather-ground-grid-stencil",
+            (grid, tile) =>
             {
-                var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _grids);
+                if (_turf.IsSpace(tile))
+                    return false;
 
-                foreach (var grid in _grids)
-                {
-                    var matrix = _transform.GetWorldMatrix(grid, xformQuery);
-                    var matty = Matrix3x2.Multiply(matrix, invMatrix);
-                    worldHandle.SetTransform(matty);
-                    _entManager.TryGetComponent(grid.Owner, out RoofComponent? roofComp);
-
-                    foreach (var tile in _map.GetTilesIntersecting(grid.Owner, grid, worldAABB))
-                    {
-                        if (_turf.IsSpace(tile))
-                            continue;
-
-                        if (!_weather.CanWeatherAffect((grid.Owner, grid, roofComp), tile))
-                            continue;
-
-                        var gridTile = new Box2(tile.GridIndices * grid.Comp.TileSize,
-                            (tile.GridIndices + Vector2i.One) * grid.Comp.TileSize);
-
-                        worldHandle.DrawRect(gridTile, Color.White);
-                    }
-                }
-            },
-            Color.Transparent);
+                return _weatherCache.CanWeatherAffect(grid, tile);
+            });
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_protoManager.Index(StencilMask).Instance());
-        worldHandle.DrawTextureRect(res.GroundBlep!.Texture, worldBounds);
+        worldHandle.DrawTextureRect(groundStencil.Texture, worldBounds);
         worldHandle.UseShader(_protoManager.Index(StencilUnmask).Instance());
-        worldHandle.DrawTextureRect(res.Blep!.Texture, worldBounds);
+        worldHandle.DrawTextureRect(blockedStencil.Texture, worldBounds);
 
         foreach (var (uid, weather, status) in weathers)
         {
@@ -173,13 +134,45 @@ public sealed partial class StencilOverlay
                 curTime,
                 position,
                 Vector2.Zero,
-                weatherOffsets[uid],
-                GetWeatherRotation(uid),
+                weatherOffsets[uid].Offset,
+                weatherOffsets[uid].Rotation,
                 (weather.Color ?? Color.White).WithAlpha(alpha));
         }
 
         worldHandle.UseShader(_protoManager.Index(StencilClear).Instance());
         worldHandle.DrawRect(worldBounds, Color.White);
+    }
+
+    private Vector2 GetWeatherShift(EntityUid weather, IClydeViewport viewport, Vector2 center, Angle rotation)
+    {
+        var key = (weather, viewport);
+        var shift = Vector2.Zero;
+        if (_weatherAnchors.TryGetValue(key, out var anchor))
+        {
+            var delta = center - anchor.Center;
+            shift = anchor.Shift + (-rotation).RotateVec(delta) - delta;
+        }
+
+        _weatherAnchors[key] = (center, shift);
+        return shift;
+    }
+
+    private void PruneWeatherAnchors()
+    {
+        if (_weatherAnchors.Count <= 16)
+            return;
+
+        _staleWeatherAnchors.Clear();
+        foreach (var key in _weatherAnchors.Keys)
+        {
+            if (_entManager.Deleted(key.Item1))
+                _staleWeatherAnchors.Add(key);
+        }
+
+        foreach (var key in _staleWeatherAnchors)
+        {
+            _weatherAnchors.Remove(key);
+        }
     }
 
     private Angle GetWeatherRotation(EntityUid weather)

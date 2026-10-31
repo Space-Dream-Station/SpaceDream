@@ -5,13 +5,15 @@
   description: Use this on a closed container to summon a [color=crimson][bold]dangerous firearm![/bold][/color]
   components:
   - type: Action
-    icon:
-      sprite: _SD/Interface/extract.rsi
-      state: arms-dealer
-    iconOn:
-      sprite: _SD/Interface/extract.rsi
-      state: arms-dealer-on
     useDelay: 180
+  - type: Sprite
+    sprite: _SD/Interface/extract.rsi
+    layers:
+    - state: arms-dealer
+      map: ["enum.ActionVisuals.Icon"]
+    - state: arms-dealer-on
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: TargetAction
   - type: EntityTargetAction
     whitelist:

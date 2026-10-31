@@ -12,13 +12,12 @@
   - type: Tag
     tags:
     - Spray
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: ADTStypticPowder
-          Quantity: 100
+  - type: Solution
+    solution:
+      maxVol: 100
+      reagents:
+      - ReagentId: ADTStypticPowder
+        Quantity: 100
 
 - type: entity
   name: silver sulfadiazine spray bottle
@@ -34,10 +33,9 @@
   - type: Tag
     tags:
     - Spray
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: ADTSilverSulfadiazine
-          Quantity: 100
+  - type: Solution
+    solution:
+      maxVol: 100
+      reagents:
+      - ReagentId: ADTSilverSulfadiazine
+        Quantity: 100

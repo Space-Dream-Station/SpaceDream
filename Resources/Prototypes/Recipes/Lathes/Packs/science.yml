@@ -26,6 +26,8 @@
   - DeviceDesynchronizer
   # - ClothingBackpackHarmpack # ADT-Tweak
   - DeviceTimeTriggerRecipe # SD Tweak
+  # - TeleporterChipBlank # ADT-Tweak
+
 - type: latheRecipePack
   id: ScienceClothing
   recipes:
@@ -111,6 +113,8 @@
   - SlimeGrinderMachineCircuitboard # ADT-Tweak
   - ADTXenobiologyMonkeyRecyclerMachineCircuitboard # ADT-Tweak
   # ADT-Tweak-End
+  # - StationTeleportersControlCircuitboard # ADT-Tweak
+  # - StationTeleporterMachineCircuitboard # ADT-Tweak
 
 - type: latheRecipePack
   id: CameraBoards

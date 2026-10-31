@@ -11,9 +11,9 @@ namespace Content.Server.ADT.Salvage.Systems;
 
 public sealed class ADTMegafaunaSpawnSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly ADTLavalandGenerationSystem _generation = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private ADTLavalandGenerationSystem _generation = default!;
 
     private readonly List<(EntProtoId Proto, EntityCoordinates Coords)> _pendingSpawns = new();
 
@@ -103,6 +103,9 @@ public sealed class ADTMegafaunaSpawnSystem : EntitySystem
 
         TryComp<ADTLavalandGenerationComponent>(ent, out var generation);
         if (generation != null && _generation.IsExcluded(generation, coords.Position))
+            return false;
+
+        if (generation != null && _generation.IsNearLava(generation, coords.Position, comp.LavaClearance))
             return false;
 
         if (!comp.AvoidRooms)

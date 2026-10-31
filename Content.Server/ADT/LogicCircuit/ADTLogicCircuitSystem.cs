@@ -9,7 +9,7 @@ namespace Content.Server.ADT.LogicCircuit;
 
 public sealed partial class ADTLogicCircuitSystem : SharedADTLogicCircuitSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private bool _logicEnabled = true;
     private int _tickInterval = 2;
@@ -149,11 +149,8 @@ public sealed partial class ADTLogicCircuitSystem : SharedADTLogicCircuitSystem
         out string detail)
     {
         var comp = ent.Comp;
-        var candidate = layout.Clone();
 
-        Normalize(candidate);
-
-        if (!TryValidate(candidate, GetLimits(comp), out error, out detail))
+        if (!TrySanitize(layout, GetLimits(comp), out var candidate, out error, out detail))
             return false;
 
         comp.Layout = candidate;

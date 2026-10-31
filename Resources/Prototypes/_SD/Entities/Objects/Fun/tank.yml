@@ -43,9 +43,6 @@
     openState: vattank-open
     brokenState: vattank
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
-    pilotWhitelist:
-      components:
-        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral
@@ -131,9 +128,6 @@
     openState: t34tank-open
     brokenState: t34tank-broken
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
-    pilotWhitelist:
-      components:
-        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral
@@ -219,9 +213,6 @@
     openState: tigertank-open
     brokenState: tigertank-broken
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
-    pilotWhitelist:
-      components:
-        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral
