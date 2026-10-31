@@ -12,6 +12,7 @@ using Content.Shared.Speech; // TSF edit
 using Content.Shared.Inventory; // TSF edit
 using Content.Server.Examine;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server.ADT.SpeechBarks;
 

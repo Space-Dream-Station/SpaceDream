@@ -6,6 +6,7 @@
 using Content.Shared.ItemMiner;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Components;
+using Content.Shared.Station.Components; // SD edit
 
 namespace Content.Server.ItemMiner;
 

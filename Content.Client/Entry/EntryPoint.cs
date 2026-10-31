@@ -18,6 +18,7 @@ using Content.Client.IoC;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
 using Content.Client.MainMenu;
+using Content.Client.Overlays;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Playtime;
@@ -51,7 +52,7 @@ using Content.Client.ADT.JoinQueue;
 
 namespace Content.Client.Entry
 {
-    public sealed class EntryPoint : GameClient
+    public sealed partial class EntryPoint : GameClient
     {
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IGameController _gameController = default!;
@@ -81,6 +82,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
         [Dependency] private readonly Content.Client.ADT.Sponsors.SponsorManager _adtSponsorManager = default!; // ADT-Tweak
         [Dependency] private readonly Content.Client.ADT.StateDiagnostics.StateDiagnosticsManager _stateDiagnostics = default!; // ADT-Tweak
+        [Dependency] private readonly Content.Client.ADT.Drawing.Sync.CanvasNetManager _canvasNet = default!; // ADT-Tweak
         [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
         [Dependency] private readonly QueueGamesManager _queueGamesManager = default!; // ADT-Tweak: queue games
         [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
@@ -122,7 +124,6 @@ namespace Content.Client.Entry
 
             _prototypeManager.RegisterIgnore("utilityQuery");
             _prototypeManager.RegisterIgnore("utilityCurvePreset");
-            _prototypeManager.RegisterIgnore("accent");
             _prototypeManager.RegisterIgnore("gasReaction");
             _prototypeManager.RegisterIgnore("seed"); // Seeds prototypes are server-only.
             _prototypeManager.RegisterIgnore("objective");
@@ -186,6 +187,7 @@ namespace Content.Client.Entry
 
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
+            _overlayManager.AddOverlay(new ScreechShockWaveOverlay());
             _chatManager.Initialize();
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
@@ -195,6 +197,7 @@ namespace Content.Client.Entry
             _sponsorsManager.Initialize(); // Corvax-Sponsors
             _adtSponsorManager.Initialize(); // ADT-Tweak
             _stateDiagnostics.Initialize(); // ADT-Tweak
+            _canvasNet.Initialize(); // ADT-Tweak
             _queueManager.Initialize(); // Corvax-Queue
             _queueGamesManager.Initialize(); // ADT-Tweak: queue games
             _discordAuthManager.Initialize(); // Corvax-DiscordAuth
