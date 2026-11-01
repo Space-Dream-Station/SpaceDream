@@ -39,15 +39,14 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 11
-        - ReagentId: CocoaPowder
-          Quantity: 3
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 11
+      - ReagentId: CocoaPowder
+        Quantity: 3
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -112,17 +111,16 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Theobromine
-          Quantity: 6
-        - ReagentId: CocoaPowder
-          Quantity: 3
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Theobromine
+        Quantity: 6
+      - ReagentId: CocoaPowder
+        Quantity: 3
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -191,13 +189,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 14
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 14
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -243,13 +240,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -296,13 +292,12 @@
   - type: Tag
     tags:
       - ClothMade
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -349,13 +344,12 @@
   - type: Tag
     tags:
       - ClothMade
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -405,13 +399,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 15
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 15
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -452,13 +445,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -508,13 +500,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -552,13 +543,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
 
 - type: entity
   parent: FoodSnackBase
@@ -589,13 +579,12 @@
   - type: Tag
     tags:
       - FoodSnack
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Xenonutriment
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Xenonutriment
+        Quantity: 5
 
 - type: entity
   categories: [ HideSpawnMenu ]

@@ -22,7 +22,7 @@ using System.Linq;
 
 namespace Content.Shared.Weapons.Marker;
 
-public abstract class SharedDamageMarkerSystem : EntitySystem
+public abstract partial class SharedDamageMarkerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _netManager = default!;

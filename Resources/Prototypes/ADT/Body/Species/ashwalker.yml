@@ -61,6 +61,10 @@
     - ADTGemBracers
     - ADTLavaBoat
     - ADTOar
+    - ADTFootwrapsGoliath
+    - ADTGoliathGloves
+    - ADTSkullCodpiece
+    - ADTClothingNeckBoneTalisman
   - type: TTS
   - type: BreathingImmunity
   - type: AshStormImmune
@@ -73,8 +77,12 @@
     raffle:
       settings: ADTAshWalker
   - type: GhostTakeoverAvailable
-  - type: Hunger
-    baseDecayRate: 0.023333333
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: ADTAshwalkerHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: NightVision
     innate: true
     effectPrototype: ADTEffectNightVisionMedium
@@ -105,10 +113,7 @@
     speechVerb: Reptilian
     allowedEmotes: ['Thump']
   - type: Vocal
-    sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+    emoteSounds: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: TypingIndicator
@@ -120,7 +125,6 @@
   - type: Wagging
   - type: InjectorsBlocker
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatLizard
       amount: 5
@@ -156,7 +160,7 @@
       55: 0.8
       75: 0.7
   - type: Temperature
-    currentTemperature: 310.15
+    temperature: 310.15
     specificHeat: 42
   - type: TemperatureSpeed
     thresholds:

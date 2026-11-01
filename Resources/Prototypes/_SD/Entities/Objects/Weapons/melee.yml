@@ -4,7 +4,6 @@
   id: SD_BSOHalberd
   description: A special plasma halberd made for the station's Blueshield officer.
   components:
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
@@ -43,6 +42,7 @@
   - type: Tool
     qualities:
       - Prying  # ADT-Axe-Great-Return
+      - Slicing # зачем удалили шарп компонент
   - type: Prying
     pryPowered: true # SD tweak
   - type: UseDelay

@@ -65,5 +65,4 @@
   - type: StaminaResistance
     damageCoefficient: 0.5
   - type: TemperatureProtection
-    heatingCoefficient: 0.8 # Blame it on bluespace.
-    coolingCoefficient: 0.1
+    coefficient: 0.8 # Blame it on bluespace.

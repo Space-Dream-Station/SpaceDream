@@ -4,13 +4,14 @@
   name: Pillowmat
   description: Distributes those soft fluffy high... Pillows!
   components:
-  - type: VendingMachine
+  - type: ADTVendingMachine
     pack: PillowmatInventory
+  - type: VendingMachineVisuals
     offState: off
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-    loopDeny: false
+    loopDenyAnimation: false
   - type: Sprite
     sprite: _SD/Structures/Machines/VendingMachines/pillowmat.rsi
     layers:
@@ -28,14 +29,15 @@
   name: Speciessnackmat
   description: Everything for everyone.
   components:
-  - type: VendingMachine
+  - type: ADTVendingMachine
     pack: SpeciesSnackInventory
+  - type: VendingMachineVisuals
     offState: off
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
     ejectState: eject-unshaded
-    loopDeny: false
+    loopDenyAnimation: false
   - type: Sprite
     sprite: _SD/Structures/Machines/VendingMachines/speciessnack.rsi
     layers:

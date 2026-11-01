@@ -8,6 +8,16 @@
     sprite: _SD/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: Clothing
     sprite: _SD/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      toggleable-clothing: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
 
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, BadgeOnClothingWithContainer]

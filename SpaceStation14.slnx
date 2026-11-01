@@ -139,6 +139,10 @@
     <Project Path="RobustToolbox/Robust.Client/Robust.Client.csproj" />
     <Project Path="RobustToolbox/Robust.Packaging/Robust.Packaging.csproj" />
     <Project Path="RobustToolbox/Robust.Server/Robust.Server.csproj" />
+    <Project Path="RobustToolbox/Robust.Shared.EntitySystemSubscriptionsGenerator/Robust.Shared.EntitySystemSubscriptionsGenerator.csproj" />
+    <Project Path="RobustToolbox/Robust.Shared.IntegrationTests/Robust.Shared.IntegrationTests.csproj" />
+    <Project Path="RobustToolbox/Robust.Shared.Maths.Testing/Robust.Shared.Maths.Testing.csproj" />
+    <Project Path="RobustToolbox/Robust.Shared.Maths.Tests/Robust.Shared.Maths.Tests.csproj" />
     <Project Path="RobustToolbox/Robust.Shared.Maths/Robust.Shared.Maths.csproj" />
     <Project Path="RobustToolbox/Robust.Shared.Scripting/Robust.Shared.Scripting.csproj" />
     <Project Path="RobustToolbox/Robust.Shared/Robust.Shared.csproj" />

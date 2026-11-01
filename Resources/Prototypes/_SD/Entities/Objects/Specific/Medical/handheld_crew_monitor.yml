@@ -4,7 +4,7 @@
   name: paramedic crew monitor
   description: A hand-held crew monitor showing civil personnel only.
   components:
-  - type: CrewMonitoringConsole
+  - type: ADTCrewMonitoringConsole
     departments: [Engineering, Science, Medical, Cargo, Civilian]
   - type: Sprite
     sprite: _SD/Objects/Specific/Medical/paramedic_handheldcrewmonitor.rsi

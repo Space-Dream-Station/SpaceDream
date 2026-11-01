@@ -6,7 +6,9 @@
   components:
   - type: Sprite
     sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi
-    state: icon
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi
   - type: ClothingSpeedModifier
@@ -28,10 +30,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi, state: icon }
-    iconOn:
-      sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi
-      state: icon-on
+  - type: Sprite
+    sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
+    - state: icon-on
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -41,7 +47,9 @@
   components:
   - type: Sprite
     sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
-    state: icon
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
   - type: ClothingSpeedModifier
@@ -62,7 +70,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: { sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi, state: icon }
-    iconOn:
-      sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
-      state: icon-on
+  - type: Sprite
+    sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
+    - state: icon-on
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false

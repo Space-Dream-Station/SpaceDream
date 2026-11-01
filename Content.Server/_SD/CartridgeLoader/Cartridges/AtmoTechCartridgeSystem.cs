@@ -23,7 +23,8 @@ public sealed class AtmoTechCartridgeSystem : EntitySystem
     private void OnCartridgeRemoved(Entity<AtmoTechCartridgeComponent> ent, ref CartridgeRemovedEvent args)
     {
         // only remove when the program itself is removed
-        if (!_cartridgeLoaderSystem.HasProgram<AtmoTechCartridgeComponent>(args.Loader))
+        var loader = new Entity<CartridgeLoaderComponent?>(args.Loader.Owner, args.Loader.Comp);
+        if (!_cartridgeLoaderSystem.HasProgram<AtmoTechCartridgeComponent>(loader))
         {
             RemComp<GasAnalyzerComponent>(args.Loader);
         }

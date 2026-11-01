@@ -59,8 +59,13 @@ namespace Content.Server.Database
         public DbSet<AdtSponsorTier> AdtSponsorTier { get; set; } = null!;
         public DbSet<AdtSponsorGrant> AdtSponsorGrant { get; set; } = null!;
         public DbSet<AdtSponsorPreference> AdtSponsorPreference { get; set; } = null!;
+        public DbSet<AdtPoll> AdtPoll { get; set; } = null!;
+        public DbSet<AdtPollResponse> AdtPollResponse { get; set; } = null!;
+        public DbSet<AdtPollPending> AdtPollPending { get; set; } = null!;
         // ADT-Tweak-End
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
+        public DbSet<CustomVoteLog> CustomVoteLog { get; set; } = null!;
+        public DbSet<CustomVoteLogOption> CustomVoteLogOption { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -119,6 +124,31 @@ namespace Content.Server.Database
             modelBuilder.Entity<AdtSponsorPreference>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
+
+            modelBuilder.Entity<AdtPollResponse>()
+                .HasIndex(p => new { p.PollId, p.UserId })
+                .IsUnique();
+
+            modelBuilder.Entity<AdtPollResponse>()
+                .HasIndex(p => p.UserId);
+
+            modelBuilder.Entity<AdtPollResponse>()
+                .HasOne(p => p.Poll)
+                .WithMany(p => p.Responses)
+                .HasForeignKey(p => p.PollId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AdtPollPending>()
+                .HasKey(p => new { p.PollId, p.UserId });
+
+            modelBuilder.Entity<AdtPollPending>()
+                .HasIndex(p => p.UserId);
+
+            modelBuilder.Entity<AdtPollPending>()
+                .HasOne(p => p.Poll)
+                .WithMany(p => p.Pending)
+                .HasForeignKey(p => p.PollId)
+                .OnDelete(DeleteBehavior.Cascade);
             // ADT-Tweak-End
 
             modelBuilder.Entity<Profile>()
@@ -375,6 +405,8 @@ namespace Content.Server.Database
                 .HasDefaultValue(HwidType.Legacy);
 
             ModelBan.OnModelCreating(modelBuilder);
+            ModelCustomVoteLog.OnModelCreating(modelBuilder);
+            ModelAdtCanvas.OnModelCreating(modelBuilder); // ADT-Tweak
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -414,9 +446,10 @@ namespace Content.Server.Database
         public int ERPStatus { get; set; } // SD-ERPStatus
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
+        public string? Voice { get; set; } = null!; // If null, the voice gets defaulted to the sex associated value
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
-        public string Voice { get; set; } = null!; // Corvax-TTS
+        [Column("tts_voice")] public string TTSVoice { get; set; } = null!; // ADT-Tweak
         public string BarkProto { get; set; } = null!; // ADT Barks
         public float BarkPitch { get; set; } = 1f; // ADT Barks
         public float LowBarkVar { get; set; } = 0.1f; // ADT Barks
@@ -854,6 +887,73 @@ namespace Content.Server.Database
 
         public string? GhostColor { get; set; }
     }
+
+    public class AdtPoll
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public string Title { get; set; } = null!;
+
+        public string Description { get; set; } = null!;
+
+        public string Questions { get; set; } = null!;
+
+        public string Filters { get; set; } = null!;
+
+        public string Servers { get; set; } = null!;
+
+        public int ShowMode { get; set; }
+
+        public Guid CreatedBy { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime? EndsAt { get; set; }
+
+        public bool Closed { get; set; }
+
+        public List<AdtPollResponse> Responses { get; } = new();
+
+        public List<AdtPollPending> Pending { get; } = new();
+    }
+
+    public class AdtPollResponse
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public int PollId { get; set; }
+
+        public AdtPoll Poll { get; set; } = null!;
+
+        public Guid UserId { get; set; }
+
+        public int? RoundId { get; set; }
+
+        public string Server { get; set; } = null!;
+
+        public DateTime SubmittedAt { get; set; }
+
+        public bool Targeted { get; set; }
+
+        public string Snapshot { get; set; } = null!;
+
+        public string Answers { get; set; } = null!;
+    }
+
+    public class AdtPollPending
+    {
+        public int PollId { get; set; }
+
+        public AdtPoll Poll { get; set; } = null!;
+
+        public Guid UserId { get; set; }
+
+        public string Snapshot { get; set; } = null!;
+
+        public DateTime CreatedAt { get; set; }
+    }
     // ADT-Tweak-End
 
     public class Round
@@ -866,6 +966,8 @@ namespace Content.Server.Database
         public List<Player> Players { get; set; } = default!;
 
         public List<AdminLog> AdminLogs { get; set; } = default!;
+
+        public List<CustomVoteLog> CustomVoteLogs { get; set; } = default!;
 
         [ForeignKey("Server")] public int ServerId { get; set; }
         public Server Server { get; set; } = default!;

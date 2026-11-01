@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
     "omnisharp.analyzeOpenDocumentsOnly": true,
-    "dotnet.defaultSolution": "SpaceStation14.sln",
-    "dotnet.preferCSharpExtension": true,
-    "dotrush.roslyn.projectOrSolutionFiles": []
-=======
     "dotnet.defaultSolution": "SpaceStation14.slnx",
-    "dotnet.preferCSharpExtension": true
->>>>>>> upstream/master
+    "dotnet.preferCSharpExtension": true,
+    "git.ignoreLimitWarning": true
 }

@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server.Gatherable;
-using Content.Server.Gatherable.Components;
+using Content.Shared.Gatherable;
+using Content.Shared.Gatherable.Components;
 using Content.Shared.ADT.Drake;
 using Content.Shared.Chasm;
 using Content.Shared.Damage;
@@ -11,6 +11,7 @@ using Content.Shared.Mining.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -25,15 +26,16 @@ namespace Content.Server.ADT.Drake;
 
 public sealed class ADTDrakeEffectsSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly GatherableSystem _gatherable = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private GatherableSystem _gatherable = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     private static readonly Direction[] Cardinals =
     {
@@ -158,7 +160,15 @@ public sealed class ADTDrakeEffectsSystem : EntitySystem
                 continue;
 
             MeteorImpact((uid, meteor), xform);
-            QueueDel(uid);
+
+            if (meteor.Linger <= TimeSpan.Zero)
+            {
+                QueueDel(uid);
+                continue;
+            }
+
+            RemCompDeferred<ADTDrakeMeteorTargetComponent>(uid);
+            EnsureComp<TimedDespawnComponent>(uid).Lifetime = (float) meteor.Linger.TotalSeconds;
         }
     }
 
@@ -182,17 +192,19 @@ public sealed class ADTDrakeEffectsSystem : EntitySystem
         }
 
         _audio.PlayPvs(ent.Comp.ImpactSound, xform.Coordinates);
-        SpawnFire(ent.Comp.FireProto, _map.GridTileToLocal(gridUid, grid, tile));
+
+        if (ent.Comp.FireProto is { } fire)
+            SpawnFire(fire, _map.GridTileToLocal(gridUid, grid, tile));
 
         foreach (var target in GetEntitiesOnTile(gridUid, grid, tile))
         {
-            if (!HasComp<MobStateComponent>(target))
+            if (!HasComp<MobStateComponent>(target) && !_whitelist.IsWhitelistPass(ent.Comp.ExtraTargets, target))
                 continue;
 
-            if (HasComp<ADTDrakeComponent>(target))
+            if (HasComp<ADTDrakeComponent>(target) || _whitelist.IsWhitelistPass(ent.Comp.Blacklist, target))
                 continue;
 
-            Damage(target, "Heat", ent.Comp.Damage, null);
+            Damage(target, ent.Comp.DamageType, ent.Comp.Damage, null);
         }
     }
 
@@ -240,6 +252,12 @@ public sealed class ADTDrakeEffectsSystem : EntitySystem
 
                 Damage(target, "Heat", ent.Comp.Damage, null);
                 _popup.PopupEntity(Loc.GetString("adt-drake-lava-hit"), target, target, PopupType.LargeCaution);
+                continue;
+            }
+
+            if (_whitelist.IsWhitelistPass(ent.Comp.ExtraTargets, target))
+            {
+                Damage(target, "Heat", ent.Comp.Damage, null);
                 continue;
             }
 
