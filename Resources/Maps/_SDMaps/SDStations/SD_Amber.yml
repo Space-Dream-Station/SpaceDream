@@ -165528,62 +165528,62 @@ entities:
   - uid: 25029
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: -19,-56
       parent: 2
 - proto: SpawnPointBartender
   entities:
   - uid: 25030
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: 20,-35
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
   - uid: 25031
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: -5,-45
       parent: 2
 - proto: SpawnPointSeniorEngineer
   entities:
   - uid: 25032
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: -4,-26
       parent: 2
 - proto: SpawnPointSeniorPhysician
   entities:
   - uid: 25033
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: -45,-30
       parent: 2
 - proto: ADTSpawnPointRoboticist
   entities:
   - uid: 25034
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: 33,-27
       parent: 2
 - proto: SpawnPointSeniorResearcher
   entities:
   - uid: 25035
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: 36,-40
       parent: 2
 - proto: SpawnPointIAA
   entities:
   - uid: 25036
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: 91,-42
       parent: 2
 - proto: SpawnPointLatejoin
   entities:
   - uid: 25037
     components:
     - type: Transform
-      pos: -0.5400696,8.931154
+      pos: -4,-32
       parent: 2
 ...
