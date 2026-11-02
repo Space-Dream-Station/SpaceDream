@@ -132029,12 +132029,12 @@ entities:
   - uid: 19003
     components:
     - type: Transform
-      pos: 28.5,12.5
+      pos: 18,10
       parent: 2
   - uid: 19004
     components:
     - type: Transform
-      pos: 28.5,8.5
+      pos: 18,10
       parent: 2
 - proto: SpawnPointBorg
   entities:
@@ -132156,7 +132156,7 @@ entities:
   - uid: 19024
     components:
     - type: Transform
-      pos: 19.5,15.5
+      pos: 37,6
       parent: 2
 - proto: SpawnPointDetective
   entities:
@@ -132263,19 +132263,19 @@ entities:
   - uid: 19041
     components:
     - type: Transform
-      pos: 23.5,15.5
+      pos: 37,6
       parent: 2
 - proto: SpawnPointMusician
   entities:
   - uid: 19042
     components:
     - type: Transform
-      pos: 36.5,11.5
+      pos: 37,6
       parent: 2
   - uid: 19043
     components:
     - type: Transform
-      pos: 37.5,7.5
+      pos: 37,6
       parent: 2
 - proto: SpawnPointObserver
   entities:
@@ -132432,7 +132432,7 @@ entities:
   - uid: 19070
     components:
     - type: Transform
-      pos: 31.5,-1.5
+      pos: 53,-1
       parent: 2
 - proto: SpawnPointSeniorOfficer
   entities:
@@ -152201,5 +152201,12 @@ entities:
     components:
     - type: Transform
       pos: -0.484375,-0.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 22434
+    components:
+    - type: Transform
+      pos: 28,5
       parent: 2
 ...
