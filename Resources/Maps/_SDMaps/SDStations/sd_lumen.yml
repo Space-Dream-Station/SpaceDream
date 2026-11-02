@@ -178572,4 +178572,53 @@ entities:
     - type: Transform
       pos: -67.00342,-15.362523
       parent: 2
+- proto: SpawnPointHeadOfPersonnel
+  entities:
+  - uid: 26459
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointADTPathologist
+  entities:
+  - uid: 26460
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointResearchDirector
+  entities:
+  - uid: 26461
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointSecurityCadet
+  entities:
+  - uid: 26462
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointSeniorOfficer
+  entities:
+  - uid: 26463
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointADTCorrectionsOfficer
+  entities:
+  - uid: 26464
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
+- proto: SpawnPointBorg
+  entities:
+  - uid: 26465
+    components:
+    - type: Transform
+      pos: 0.4558292,0.42837813
+      parent: 2
 ...

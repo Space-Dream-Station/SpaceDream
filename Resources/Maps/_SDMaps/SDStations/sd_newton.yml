@@ -379035,4 +379035,11 @@ entities:
     - type: Transform
       pos: 59.191154,16.518507
       parent: 2
+- proto: SpawnPointPilot
+  entities:
+  - uid: 56123
+    components:
+    - type: Transform
+      pos: -0.5,-0.4375
+      parent: 2
 ...

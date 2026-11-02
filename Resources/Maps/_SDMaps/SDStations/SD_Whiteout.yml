@@ -300644,4 +300644,32 @@ entities:
     - type: Transform
       pos: -55.978584,-13.2499695
       parent: 2
+- proto: SpawnPointIAA
+  entities:
+  - uid: 44266
+    components:
+    - type: Transform
+      pos: 2.2704058,4.58155
+      parent: 2
+- proto: ADTSpawnPointRoboticist
+  entities:
+  - uid: 44267
+    components:
+    - type: Transform
+      pos: 2.2704058,4.58155
+      parent: 2
+- proto: SpawnPointADTPathologist
+  entities:
+  - uid: 44268
+    components:
+    - type: Transform
+      pos: 2.2704058,4.58155
+      parent: 2
+- proto: SpawnPointADTCorrectionsOfficer
+  entities:
+  - uid: 44269
+    components:
+    - type: Transform
+      pos: 2.2704058,4.58155
+      parent: 2
 ...

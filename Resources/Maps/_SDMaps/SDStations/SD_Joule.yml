@@ -152174,4 +152174,32 @@ entities:
     - type: Transform
       pos: 6.6735744,-43.922176
       parent: 2
+- proto: SpawnPointPassenger
+  entities:
+  - uid: 22430
+    components:
+    - type: Transform
+      pos: -0.484375,-0.5
+      parent: 2
+- proto: SpawnPointPsychologist
+  entities:
+  - uid: 22431
+    components:
+    - type: Transform
+      pos: -0.484375,-0.5
+      parent: 2
+- proto: SpawnPointADTCorrectionsOfficer
+  entities:
+  - uid: 22432
+    components:
+    - type: Transform
+      pos: -0.484375,-0.5
+      parent: 2
+- proto: SpawnPointPilot
+  entities:
+  - uid: 22433
+    components:
+    - type: Transform
+      pos: -0.484375,-0.5
+      parent: 2
 ...

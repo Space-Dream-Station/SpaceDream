@@ -165523,4 +165523,67 @@ entities:
     - type: Transform
       pos: 18.407438,-10.54795
       parent: 2
+- proto: SpawnADTBlueShieldOfficer
+  entities:
+  - uid: 25029
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointBartender
+  entities:
+  - uid: 25030
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointServiceWorker
+  entities:
+  - uid: 25031
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointSeniorEngineer
+  entities:
+  - uid: 25032
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointSeniorPhysician
+  entities:
+  - uid: 25033
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: ADTSpawnPointRoboticist
+  entities:
+  - uid: 25034
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointSeniorResearcher
+  entities:
+  - uid: 25035
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointIAA
+  entities:
+  - uid: 25036
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 25037
+    components:
+    - type: Transform
+      pos: -0.5400696,8.931154
+      parent: 2
 ...

@@ -150887,4 +150887,39 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 54.692352,-56.985455
       parent: 2
+- proto: SpawnPointBartender
+  entities:
+  - uid: 22062
+    components:
+    - type: Transform
+      pos: -0.59324175,-0.7483667
+      parent: 2
+- proto: SpawnPointSeniorEngineer
+  entities:
+  - uid: 22063
+    components:
+    - type: Transform
+      pos: -0.59324175,-0.7483667
+      parent: 2
+- proto: SpawnPointClown
+  entities:
+  - uid: 22064
+    components:
+    - type: Transform
+      pos: -0.59324175,-0.7483667
+      parent: 2
+- proto: SpawnPointMime
+  entities:
+  - uid: 22065
+    components:
+    - type: Transform
+      pos: -0.59324175,-0.7483667
+      parent: 2
+- proto: SpawnPointMusician
+  entities:
+  - uid: 22066
+    components:
+    - type: Transform
+      pos: -0.59324175,-0.7483667
+      parent: 2
 ...
