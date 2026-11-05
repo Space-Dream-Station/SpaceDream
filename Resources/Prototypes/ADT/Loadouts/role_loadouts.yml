@@ -18,8 +18,8 @@
   - ADTBottom
   - ADTSocks
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutLawyer
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutLawyer
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTPathologist
@@ -44,8 +44,8 @@
   - ADTBottom
   - ADTSocks
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTRoboticist
@@ -71,8 +71,8 @@
   - ADTBottom
   - ADTSocks
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTBlueShieldOfficer
@@ -95,8 +95,8 @@
   - ADTBottomBlueshield
   - ADTSocksBlueshield
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutBlueShieldOfficer
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutBlueShieldOfficer
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTCentcomConsultant
@@ -120,7 +120,7 @@
   - ADTTop
   - ADTBottom
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTSeniorPhysician
@@ -145,8 +145,8 @@
   - ADTBottom
   - ADTSocks
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTSeniorResearcher
@@ -170,8 +170,8 @@
   - ADTSocks
   - GroupSpeciesBreathTool
   # ADT tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTSeniorEngineer
@@ -195,8 +195,8 @@
   - ADTSocks
   - GroupSpeciesBreathTool
   # ADT tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTSeniorOfficer
@@ -220,8 +220,8 @@
   - ADTSocks
   - GroupSpeciesBreathToolSecurity
   # ADT tweak end
-  # - ADTPersonalLoadoutSecurity
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutSecurity
+  - ADTPersonalLoadoutPlushie
 
   # brigmedic
 - type: roleLoadout
@@ -251,7 +251,7 @@
   - ADTBottom
   - ADTSocks
   # ADT underwear tweak end
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTCorrectionsOfficer
@@ -274,8 +274,8 @@
   - ADTSocks
   - GroupSpeciesBreathToolSecurity
   # ADT tweak end
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTBarber
@@ -297,8 +297,8 @@
   - ADTSprayPaints # ADT-Tweak
   - ADTRacialItems # ADT-Tweak
   - GroupSpeciesBreathTool
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
 
 - type: roleLoadout
   id: JobADTMiner
@@ -323,5 +323,5 @@
   - ADTSprayPaints # ADT-Tweak
   - ADTRacialItems # ADT-Tweak
   - GroupSpeciesBreathTool
-  # - ADTPersonalLoadoutCivilian
-  # - ADTPersonalLoadoutPlushie
+  - ADTPersonalLoadoutCivilian
+  - ADTPersonalLoadoutPlushie
