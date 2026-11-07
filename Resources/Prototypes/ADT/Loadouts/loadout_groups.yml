@@ -420,7 +420,7 @@
   loadouts:
   - ADTBlueshieldCloak
   - ADTBlueshieldCloakSecond
-
+  - ADTBlueshieldCloakThird # SD Tweak
 - type: loadoutGroup
   id: ADTBlueshieldBack
   name: loadout-group-blueshield-back

@@ -1257,6 +1257,10 @@
   - type: Battery
     maxCharge: 480
     startingCharge: 480
+  # SD Tweak Start
+  - type: BatterySelfRecharger
+    autoRechargeRate: 4
+  # SD Tweak End
 
 - type: entity
   name: energy magnum
@@ -1451,7 +1455,7 @@
   id: WeaponRangeFinderXenoborg
   name: xenoborg range finder
   components:
-  - type: Sprite 
+  - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/xenoborg_range_finder.rsi
     layers:
     - state: icon
