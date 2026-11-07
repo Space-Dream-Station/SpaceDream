@@ -1,44 +1,46 @@
 - type: entity
-  parent: BaseItem
-  id: RadioHandheld
   name: handheld radio
   description: A handy handheld radio.
+  parent: BaseItem
+  id: RadioHandheld
   components:
   - type: TelecomExempt
-# SD Tweak Start
-  - type: RadioMicrophone
-    broadcastChannel: Handheld
-  - type: RadioSpeaker
-    channels:
-    - Handheld
-# SD Tweak End
+# ADT-Tweak-Start
+  - type: ADTTunableRadio
+    frequency: 1330
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.RadioDeviceVisuals.Speaker:
+        enum.RadioDeviceVisualLayers.Speaker:
+          True: { visible: true }
+          False: { visible: false }
+      enum.RadioDeviceVisuals.Broadcasting:
+        enum.RadioDeviceVisualLayers.Broadcasting:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.ADTTunableRadioUiKey.Key
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.ADTTunableRadioUiKey.Key:
+        type: TunableRadioBoundUserInterface
+# ADT-Tweak-End
   - type: Speech
     speechVerb: Robotic
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
     layers:
     - state: walkietalkie
-# SD Tweak Start
-    - map: [enum.RadioDeviceVisualLayers.Broadcasting]
-      state: walkietalkie-on
-      shader: unshaded
+    # ADT-Tweak-Start
+    - state: walkietalkie-on
+      map: ["enum.RadioDeviceVisualLayers.Speaker"]
+    - state: walkietalkie-active
+      map: ["enum.RadioDeviceVisualLayers.Broadcasting"]
       visible: false
-    - map: [enum.RadioDeviceVisualLayers.Speaker]
-      state: walkietalkie-active
-      shader: unshaded
-      visible: false
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.RadioDeviceVisuals.Broadcasting:
-        enum.RadioDeviceVisualLayers.Broadcasting:
-          True: { visible: true }
-          False: { visible: false }
-      enum.RadioDeviceVisuals.Speaker:
-        enum.RadioDeviceVisualLayers.Speaker:
-          True: { visible: true }
-          False: { visible: false }
-# SD Tweak End
+    # ADT-Tweak-End
+    state: walkietalkie
   - type: Item
     sprite: Objects/Devices/communication.rsi
     heldPrefix: walkietalkie

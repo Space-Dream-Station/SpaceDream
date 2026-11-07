@@ -9,6 +9,7 @@
   cost: 25000
   recipeUnlocks:
     - PowerCellMicroreactor
-  position: -1, -2
+  position: -1, 1
   requiredTech:
   - ADTAdvancedEnergy
+  - NuclearPowerGeneration

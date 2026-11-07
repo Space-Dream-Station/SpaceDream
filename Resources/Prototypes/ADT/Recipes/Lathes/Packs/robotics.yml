@@ -49,7 +49,10 @@
   - ADTModsuitModMesonVision
   - ADTModsuitModBodycam
   # - ADTModsuitModNoslip
-  - ModsuitModSpeedboot # SD Tweak
+  # SD Tweak Start
+  - ModsuitModSpeedboot
+  - ADTModsuitModStorageBluespace
+  # SD Tweak End
 
 - type: latheRecipePack
   id: ADTGygaxPack

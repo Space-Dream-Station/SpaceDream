@@ -36,10 +36,10 @@
     - type: GridSpawn
       groups:
         ruins: !type:GridSpawnGroup
-          hide: false
+          hide: true
           nameGrid: true
           minCount: 1
-          maxCount: 2
+          maxCount: 1
           stationGrid: false
           paths:
           - /Maps/ADTMaps/Ruins/bss_unluck.yml
@@ -47,9 +47,23 @@
           - /Maps/ADTMaps/Ruins/kamikaze.yml
           - /Maps/ADTMaps/Ruins/rnd_debris.yml
           - /Maps/ADTMaps/Ruins/sindy_apling.yml
-          - /Maps/ADTMaps/Ruins/syndi_base.yml
           - /Maps/ADTMaps/Ruins/ussp_asteroid.yml
           - /Maps/ADTMaps/Ruins/ussp_debris.yml
+          - /Maps/Ruins/abandoned_outpost.yml
+          - /Maps/Ruins/atmos_interchange.yml
+          - /Maps/Ruins/biodome_satellite.yml
+          - /Maps/Ruins/chunked_tcomms.yml
+          - /Maps/Ruins/derelict.yml
+          - /Maps/Ruins/displaced_telescience.yml
+          - /Maps/Ruins/djstation.yml
+          - /Maps/Ruins/empty_flagship.yml
+          - /Maps/Ruins/hydro_outpost.yml
+          - /Maps/Ruins/old_ai_sat.yml
+          - /Maps/Ruins/ruined_prison_ship.yml
+          - /Maps/Ruins/syndicate_dropship.yml
+          - /Maps/Ruins/whiteship_ancient.yml
+          - /Maps/Ruins/whiteship_bluespacejumper.yml
+          - /Maps/Ruins/wrecklaimer.yml
     # SD Tweak End
 
 - type: entity

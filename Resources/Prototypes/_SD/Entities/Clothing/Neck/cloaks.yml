@@ -33,3 +33,12 @@
   components:
   - type: Sprite
     sprite: _SD/Clothing/Neck/Cloak/trans.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: SDClothingNeckCloakBlueshield
+  name: мантия офицера синего щита
+  description: Мантия идеального защитника, создана исключительно для стойких духом.
+  components:
+  - type: Sprite
+    sprite: _SD/Clothing/Neck/Cloak/bso_mantle.rsi
