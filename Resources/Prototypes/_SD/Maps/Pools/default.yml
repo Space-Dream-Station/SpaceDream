@@ -2,6 +2,7 @@
   id: SDMapPool
   maps:
   - ADT_Bagel
+  - ADT_Delta
   - ADT_Marathon
   - ADT_Aspid
   - ADT_Saltern
